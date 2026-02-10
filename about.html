@@ -1,0 +1,1280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me | Rabiu Sani Muhammad (Aljauromanee) - Full Brand Designer</title>
+    <meta name="description" content="Learn more about Rabiu Sani Muhammad (Aljauromanee), a professional Full Brand Designer specializing in Graphics Design, UI/UX Design, and Visual Identity Systems">
+    <meta name="keywords" content="About Brand Designer, Design Journey, Creative Process, Design Philosophy, Professional Experience">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="images/favicon_io/favicon.ico">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        :root {
+            --primary: #1a1a2e;
+            --secondary: #16213e;
+            --accent: #0f9b8e;
+            --accent-light: #1dc9b7;
+            --light: #f8f9fa;
+            --gray: #6c757d;
+            --dark: #212529;
+            --success: #28a745;
+            --warning: #ffc107;
+        }
+
+        body {
+            background-color: #f9f9f9;
+            color: #333;
+            line-height: 1.6;
+            padding-top: 80px;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header & Navigation - Same as home page */
+        header {
+            background-color: rgba(26, 26, 46, 0.95);
+            color: white;
+            padding: 18px 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        header.scrolled {
+            padding: 12px 0;
+            background-color: rgba(26, 26, 46, 0.98);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--accent-light);
+            text-decoration: none;
+            font-family: 'Montserrat', sans-serif;
+            letter-spacing: 0.5px;
+        }
+
+        .logo span {
+            color: white;
+            font-weight: 600;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 35px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s;
+            padding: 8px 16px;
+            border-radius: 4px;
+            font-size: 1rem;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: var(--accent-light);
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after,
+        .nav-links a.active::after {
+            width: 80%;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-light);
+        }
+
+        .nav-links a.active {
+            color: var(--accent-light);
+        }
+
+        .mobile-menu {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: white;
+            background: none;
+            border: none;
+            padding: 5px;
+            z-index: 1001;
+        }
+
+        /* About Hero Section */
+        .about-hero {
+            background: linear-gradient(135deg, rgba(26, 26, 46, 0.671) 0%, rgba(22, 33, 62, 0.693) 100%), url('images/hero-about.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: white;
+            padding: 120px 0 80px;
+            text-align: center;
+            margin-bottom: 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .about-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 20% 50%, rgba(15, 155, 142, 0.15) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 20%, rgba(29, 201, 183, 0.1) 0%, transparent 50%);
+        }
+
+        .about-hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .about-hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 25px;
+            line-height: 1.2;
+            font-weight: 800;
+            font-family: 'Montserrat', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .about-hero .highlight {
+            color: var(--accent-light);
+            font-weight: 800;
+            position: relative;
+            display: inline-block;
+        }
+
+        .about-hero .highlight::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, transparent, var(--accent-light), transparent);
+            bottom: -8px;
+            left: 0;
+            border-radius: 2px;
+        }
+
+        .about-hero p {
+            font-size: 1.2rem;
+            margin-bottom: 35px;
+            color: rgba(255, 255, 255, 0.9);
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.7;
+        }
+
+        /* Journey Timeline */
+        .journey {
+            margin-bottom: 100px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.6rem;
+            color: var(--primary);
+            margin-bottom: 60px;
+            position: relative;
+            padding-bottom: 15px;
+            font-weight: 700;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--accent), var(--accent-light));
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+
+        .timeline {
+            position: relative;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(to bottom, var(--accent), var(--accent-light));
+            border-radius: 2px;
+        }
+
+        .timeline-item {
+            margin-bottom: 60px;
+            position: relative;
+            width: 100%;
+            padding-left: 50%;
+            padding-right: 30px;
+        }
+
+        .timeline-item:nth-child(even) {
+            padding-left: 30px;
+            padding-right: 50%;
+        }
+
+        .timeline-content {
+            background: white;
+            padding: 35px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            position: relative;
+            transition: all 0.4s;
+            border-left: 4px solid var(--accent);
+        }
+
+        .timeline-item:nth-child(even) .timeline-content {
+            border-left: none;
+            border-right: 4px solid var(--accent);
+        }
+
+        .timeline-content:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+        }
+
+        .timeline-year {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: var(--accent);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            box-shadow: 0 5px 15px rgba(15, 155, 142, 0.3);
+        }
+
+        .timeline-item:nth-child(odd) .timeline-year {
+            right: -85px;
+        }
+
+        .timeline-item:nth-child(even) .timeline-year {
+            left: -85px;
+        }
+
+        .timeline-content h3 {
+            font-size: 1.5rem;
+            color: var(--secondary);
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .timeline-content p {
+            color: #666;
+            line-height: 1.7;
+            margin-bottom: 15px;
+        }
+
+        /* Design Philosophy */
+        .philosophy {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 100px 0;
+            border-radius: 20px;
+            margin-bottom: 100px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .philosophy::before {
+            content: '';
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.05) 0%, transparent 70%);
+            top: -200px;
+            right: -200px;
+            border-radius: 50%;
+        }
+
+        .philosophy-content {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .philosophy-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .philosophy-card {
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 15px;
+            padding: 40px 30px;
+            text-align: center;
+            transition: all 0.4s;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .philosophy-card:hover {
+            transform: translateY(-15px);
+            background: rgba(255, 255, 255, 0.12);
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .philosophy-card i {
+            font-size: 3rem;
+            color: var(--accent-light);
+            margin-bottom: 25px;
+        }
+
+        .philosophy-card h3 {
+            font-size: 1.6rem;
+            margin-bottom: 20px;
+            color: white;
+            font-weight: 600;
+        }
+
+        .philosophy-card p {
+            color: rgba(255, 255, 255, 0.85);
+            line-height: 1.7;
+        }
+
+        /* Values Section */
+        .values {
+            margin-bottom: 100px;
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+
+        .value-card {
+            background: white;
+            border-radius: 15px;
+            padding: 45px 35px;
+            text-align: center;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+            transition: all 0.4s;
+            position: relative;
+            overflow: hidden;
+            border-top: 5px solid var(--accent);
+        }
+
+        .value-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.12);
+        }
+
+        .value-card i {
+            font-size: 3rem;
+            color: var(--accent);
+            margin-bottom: 25px;
+        }
+
+        .value-card h3 {
+            font-size: 1.6rem;
+            color: var(--secondary);
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .value-card p {
+            color: #666;
+            line-height: 1.7;
+        }
+
+        /* Personal Side */
+        .personal {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 70px;
+            align-items: center;
+            margin-bottom: 100px;
+            background: white;
+            padding: 60px;
+            border-radius: 20px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
+        }
+
+        .personal-text h2 {
+            font-size: 2.6rem;
+            color: var(--primary);
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 15px;
+            font-weight: 700;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .personal-text h2::after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--accent), var(--accent-light));
+            bottom: 0;
+            left: 0;
+            border-radius: 2px;
+        }
+
+        .personal-text p {
+            margin-bottom: 20px;
+            color: #555;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .personal-interests {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .interest-tag {
+            background: rgba(15, 155, 142, 0.1);
+            color: var(--accent);
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-size: 0.95rem;
+            font-weight: 500;
+            border: 1px solid rgba(15, 155, 142, 0.2);
+            transition: all 0.3s;
+        }
+
+        .interest-tag:hover {
+            background: var(--accent);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        .personal-image {
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.1);
+            transition: transform 0.5s;
+            position: relative;
+        }
+
+        .personal-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(15, 155, 142, 0.2), transparent);
+            z-index: 1;
+            opacity: 0;
+            transition: opacity 0.5s;
+        }
+
+        .personal-image:hover::before {
+            opacity: 1;
+        }
+
+        .personal-image:hover {
+            transform: translateY(-10px) scale(1.02);
+        }
+
+        .personal-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.5s;
+        }
+
+        .personal-image:hover img {
+            transform: scale(1.05);
+        }
+
+        /* Call to Action */
+        .about-cta {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+            margin-bottom: 80px;
+            border-radius: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .about-cta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, transparent 50%, rgba(255, 255, 255, 0.03) 50%);
+            background-size: 20px 20px;
+        }
+
+        .about-cta-content {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .about-cta-content h3 {
+            font-size: 2.5rem;
+            margin-bottom: 25px;
+            color: white;
+            font-weight: 700;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .about-cta-content p {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.7;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 16px 36px;
+            background: linear-gradient(135deg, var(--accent) 0%, var(--accent-light) 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            text-align: center;
+            font-size: 1rem;
+            box-shadow: 0 4px 15px rgba(15, 155, 142, 0.3);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 100%;
+            background: linear-gradient(135deg, var(--accent-light) 0%, var(--accent) 100%);
+            transition: width 0.5s ease;
+            z-index: -1;
+        }
+
+        .btn:hover::before {
+            width: 100%;
+        }
+
+        .btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(15, 155, 142, 0.4);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid white;
+            color: white;
+            box-shadow: none;
+        }
+
+        .btn-outline::before {
+            background: white;
+        }
+
+        .btn-outline:hover {
+            color: var(--primary);
+        }
+
+        /* Footer - Same as home page */
+        footer {
+            background-color: var(--primary);
+            color: white;
+            padding: 70px 0 25px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 Z" fill="rgba(15,155,142,0.05)"/></svg>');
+            background-size: cover;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 50px;
+            margin-bottom: 50px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .footer-column h3 {
+            font-size: 1.6rem;
+            margin-bottom: 25px;
+            color: var(--accent-light);
+            font-weight: 600;
+        }
+
+        .footer-column p {
+            color: #ccc;
+            margin-bottom: 20px;
+            line-height: 1.7;
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 15px;
+        }
+
+        .footer-column ul li a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .footer-column ul li a:hover {
+            color: var(--accent-light);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 25px;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            background-color: rgba(255, 255, 255, 0.08);
+            border-radius: 50%;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s;
+            font-size: 1.1rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .social-links a:hover {
+            background-color: var(--accent-light);
+            transform: translateY(-5px) scale(1.1);
+            border-color: var(--accent-light);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #aaa;
+            font-size: 0.9rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1100px) {
+            .about-hero h1 {
+                font-size: 3rem;
+            }
+            
+            .personal {
+                gap: 50px;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .personal {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .about-hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .timeline::before {
+                left: 30px;
+            }
+            
+            .timeline-item,
+            .timeline-item:nth-child(even) {
+                padding-left: 80px;
+                padding-right: 30px;
+            }
+            
+            .timeline-item:nth-child(odd) .timeline-year,
+            .timeline-item:nth-child(even) .timeline-year {
+                left: -55px;
+                right: auto;
+            }
+            
+            .personal-image {
+                order: -1;
+            }
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding-top: 70px;
+            }
+            
+            header {
+                padding: 15px 0;
+            }
+            
+            .nav-links {
+                display: none;
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background-color: var(--primary);
+                flex-direction: column;
+                padding: 100px 30px 30px;
+                text-align: center;
+                gap: 20px;
+                z-index: 999;
+                overflow-y: auto;
+            }
+            
+            .nav-links.active {
+                display: flex;
+            }
+            
+            .nav-links li {
+                width: 100%;
+            }
+            
+            .nav-links a {
+                display: block;
+                width: 100%;
+                padding: 15px;
+                font-size: 1.2rem;
+                border-radius: 8px;
+                background: rgba(255, 255, 255, 0.05);
+            }
+            
+            .mobile-menu {
+                display: block;
+            }
+            
+            .logo {
+                font-size: 1.6rem;
+            }
+            
+            .about-hero {
+                padding: 80px 0 50px;
+                background-attachment: scroll;
+            }
+            
+            .about-hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .about-hero p {
+                font-size: 1.1rem;
+            }
+            
+            .section-title {
+                font-size: 2.2rem;
+            }
+            
+            .personal {
+                padding: 40px 30px;
+            }
+            
+            .philosophy-grid,
+            .values-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .about-hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .personal-text h2,
+            .section-title,
+            .about-cta-content h3 {
+                font-size: 2rem;
+            }
+            
+            .timeline-content {
+                padding: 25px;
+            }
+            
+            .philosophy-card,
+            .value-card {
+                padding: 30px 20px;
+            }
+            
+            .timeline-item,
+            .timeline-item:nth-child(even) {
+                padding-left: 60px;
+                padding-right: 15px;
+            }
+            
+            .timeline-item:nth-child(odd) .timeline-year,
+            .timeline-item:nth-child(even) .timeline-year {
+                left: -40px;
+                padding: 8px 15px;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header id="header">
+        <div class="container">
+            <nav>
+                <a href="index.html" class="logo">Rabiu<span>Sani</span></a>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html" class="active">About</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="skills.html">Tech Stacks</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <button class="mobile-menu" id="mobileMenuBtn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- About Hero Section -->
+    <section class="about-hero">
+        <div class="container">
+            <div class="about-hero-content">
+                <h1>My <span class="highlight">Design Journey</span> & Creative Philosophy</h1>
+                <p>I'm <strong>Rabiu SM (Aljauromanee)</strong>, a Software System Engineer and passionate Full Brand Designer from based in FCT, Abuja, Nigeria, with over 5 years of experience crafting visual identities that tell compelling stories and drive business success.</p>
+                <div class="cta-buttons">
+                    <a href="myjourney.html" class="btn"><i class="fas fa-scroll"></i> Explore My Journey</a>
+                    <a href="contact.html" class="btn btn-outline"><i class="fas fa-comments"></i> Let's Talk Design</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- My Journey Timeline -->
+    <section class="journey" id="journey">
+        <div class="container">
+            <h2 class="section-title">My Design Journey</h2>
+            
+            <div class="timeline">
+                <!-- Timeline Item 1 -->
+                <div class="timeline-item">
+                    <div class="timeline-year">2016-2017</div>
+                    <div class="timeline-content">
+                        <h3>The Beginning: Discovering Design</h3>
+                        <p>My journey started with a fascination for how visual elements communicate ideas. I began learning graphic design fundamentals through online courses and personal projects, focusing on logo design and basic branding principles.</p>
+                        <p>During this period, I worked on small local business projects, learning how to translate client needs into visual solutions.</p>
+                    </div>
+                </div>
+                
+                <!-- Timeline Item 2 -->
+                <div class="timeline-item">
+                    <div class="timeline-year">2018-2019</div>
+                    <div class="timeline-content">
+                        <h3>Professional Growth: Expanding Skills</h3>
+                        <p>I expanded into UI/UX design, recognizing the importance of digital experiences in modern branding. Completed certification courses in user-centered design and began working with startups to create comprehensive brand systems.</p>
+                        <p>Started my professional brand "Aljauromanee" to establish my unique design identity and approach.</p>
+                    </div>
+                </div>
+                
+                <!-- Timeline Item 3 -->
+                <div class="timeline-item">
+                    <div class="timeline-year">2020-2021</div>
+                    <div class="timeline-content">
+                        <h3>Specialization: Full Brand Design</h3>
+                        <p>Developed my "Full Brand Designer" approach, integrating graphic design, UI/UX, and strategic branding into cohesive systems. Worked with businesses across Nigeria and internationally, helping them establish strong visual identities.</p>
+                        <p>Started mentoring aspiring designers and sharing knowledge through online platforms.</p>
+                    </div>
+                </div>
+                
+                <!-- Timeline Item 4 -->
+                <div class="timeline-item">
+                    <div class="timeline-year">2022-Present</div>
+                    <div class="timeline-content">
+                        <h3>Maturity & Innovation: Strategic Design Leadership</h3>
+                        <p>Currently focusing on creating comprehensive brand ecosystems that work across all touchpoints. Emphasizing research-driven design, sustainability in branding, and creating systems that evolve with businesses.</p>
+                        <p>Continuously learning and adapting to new design technologies and methodologies while staying true to timeless design principles.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Design Philosophy -->
+    <section class="philosophy">
+        <div class="container">
+            <h2 class="section-title" style="color: white;">My Design Philosophy</h2>
+            <div class="philosophy-content">
+                <p style="text-align: center; font-size: 1.2rem; margin-bottom: 40px; color: rgba(255, 255, 255, 0.9); max-width: 800px; margin-left: auto; margin-right: auto;">I believe design is not just about aesthetics—it's a strategic tool for communication, problem-solving, and creating meaningful connections between brands and their audiences.</p>
+                
+                <div class="philosophy-grid">
+                    <div class="philosophy-card">
+                        <i class="fas fa-brain"></i>
+                        <h3>Strategic Thinking</h3>
+                        <p>Every design decision should serve a strategic purpose. I begin with research and analysis to ensure designs align with business objectives and audience needs.</p>
+                    </div>
+                    
+                    <div class="philosophy-card">
+                        <i class="fas fa-users"></i>
+                        <h3>User-Centered Approach</h3>
+                        <p>Design should prioritize the end-user's experience and needs. I focus on creating intuitive, accessible, and engaging experiences across all touchpoints.</p>
+                    </div>
+                    
+                    <div class="philosophy-card">
+                        <i class="fas fa-sync-alt"></i>
+                        <h3>Holistic Systems</h3>
+                        <p>Brands need cohesive visual systems, not just individual elements. I create comprehensive identity systems that maintain consistency across all platforms.</p>
+                    </div>
+                    
+                    <div class="philosophy-card">
+                        <i class="fas fa-seedling"></i>
+                        <h3>Sustainable Design</h3>
+                        <p>Good design should stand the test of time. I focus on creating timeless systems that can evolve with the brand while maintaining core identity elements.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Values -->
+    <section class="values">
+        <div class="container">
+            <h2 class="section-title">My Core Values</h2>
+            
+            <div class="values-grid">
+                <div class="value-card">
+                    <i class="fas fa-handshake"></i>
+                    <h3>Collaborative Partnership</h3>
+                    <p>I view every project as a partnership. Open communication, mutual respect, and shared goals lead to the most successful outcomes.</p>
+                </div>
+                
+                <div class="value-card">
+                    <i class="fas fa-lightbulb"></i>
+                    <h3>Creative Innovation</h3>
+                    <p>Balancing creativity with functionality. I push boundaries while ensuring designs are practical, usable, and aligned with strategic objectives.</p>
+                </div>
+                
+                <div class="value-card">
+                    <i class="fas fa-trophy"></i>
+                    <h3>Excellence & Quality</h3>
+                    <p>Committed to delivering exceptional quality in every project. Attention to detail and dedication to craft are non-negotiable in my process.</p>
+                </div>
+                
+                <div class="value-card">
+                    <i class="fas fa-heart"></i>
+                    <h3>Passion & Purpose</h3>
+                    <p>Design is more than a profession—it's my passion. I bring energy, enthusiasm, and purpose to every project I undertake.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Personal Side -->
+    <section class="personal">
+        <div class="personal-text">
+            <h2>Beyond the Design Studio</h2>
+            <p>When I'm not designing, I'm exploring other creative outlets and continuing my journey of learning and growth. I believe that a well-rounded life outside of work fuels creativity within it.</p>
+            <p>Based in Taraba State, Nigeria, I draw inspiration from our rich cultural heritage, natural landscapes, and the vibrant energy of Nigerian creativity. These elements often find their way into my design approach.</p>
+            <p>I'm passionate about mentoring young designers in my community and believe in giving back by sharing knowledge and creating opportunities for others.</p>
+            
+            <div class="personal-interests">
+                <span class="interest-tag">Photography</span>
+                <span class="interest-tag">Cultural Research</span>
+                <span class="interest-tag">Design Mentorship</span>
+                <span class="interest-tag">Technology Trends</span>
+                <span class="interest-tag">Travel & Exploration</span>
+                <span class="interest-tag">Creative Writing</span>
+            </div>
+        </div>
+        
+        <div class="personal-image">
+            <img src="images/CTA2.png" alt="Rabiu Sani Muhammad - Personal Life">
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="about-cta">
+        <div class="container">
+            <div class="about-cta-content">
+                <h3>Let's Create Something Meaningful Together</h3>
+                <p>Whether you're looking to build a new brand from scratch, refresh an existing identity, or develop a comprehensive design system, I'd love to learn about your vision and explore how we can bring it to life.</p>
+                <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
+                    <a href="portfolio.html" class="btn"><i class="fas fa-eye"></i> View My Work</a>
+                    <a href="contact.html" class="btn btn-outline"><i class="fas fa-comment-dots"></i> Start a Conversation</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Rabiu Sani Muhammad</h3>
+                    <p>Professional Full Brand Designer specializing in comprehensive visual identity systems, UI/UX design, and strategic brand development for businesses of all sizes.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-behance"></i></a>
+                        <a href="#"><i class="fab fa-dribbble"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
+                        <li><a href="about.html"><i class="fas fa-chevron-right"></i> About Me</a></li>
+                        <li><a href="portfolio.html"><i class="fas fa-chevron-right"></i> Portfolio</a></li>
+                        <li><a href="skills.html"><i class="fas fa-chevron-right"></i> Tech Stacks</a></li>
+                        <li><a href="services.html"><i class="fas fa-chevron-right"></i> Services</a></li>
+                        <li><a href="contact.html"><i class="fas fa-chevron-right"></i> Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Info</h3>
+                    <ul>
+                        <li><a href="mailto:aljauromanee@gmail.com"><i class="fas fa-envelope"></i> aljauromanee@gmail.com</a></li>
+                        <li><a href="tel:+2349123234431"><i class="fas fa-phone-alt"></i> +234 9123234431</a></li>
+                        <li><a href="#"><i class="fas fa-map-marker-alt"></i> FCT, Abuja, Nigeria</a></li>
+                        <li><a href="#"><i class="fas fa-globe"></i> Available for International Projects</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2026 Rabiu Sani Muhammad (Aljauromanee). All Rights Reserved. | Professional Brand Design Portfolio</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navLinks = document.querySelector('.nav-links');
+        const menuIcon = mobileMenuBtn.querySelector('i');
+        
+        mobileMenuBtn.addEventListener('click', function() {
+            navLinks.classList.toggle('active');
+            
+            // Toggle menu icon
+            if (navLinks.classList.contains('active')) {
+                menuIcon.classList.remove('fa-bars');
+                menuIcon.classList.add('fa-times');
+                document.body.style.overflow = 'hidden';
+            } else {
+                menuIcon.classList.remove('fa-times');
+                menuIcon.classList.add('fa-bars');
+                document.body.style.overflow = 'auto';
+            }
+        });
+
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                menuIcon.classList.remove('fa-times');
+                menuIcon.classList.add('fa-bars');
+                document.body.style.overflow = 'auto';
+                
+                // Update active class
+                document.querySelectorAll('.nav-links a').forEach(a => {
+                    a.classList.remove('active');
+                });
+                link.classList.add('active');
+            });
+        });
+
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.getElementById('header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                
+                // Only prevent default for on-page anchor links
+                if (href.startsWith('#') && href.length > 1) {
+                    e.preventDefault();
+                    
+                    const targetElement = document.querySelector(href);
+                    if(targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                }
+            });
+        });
+
+        // Add animation to elements on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Animate timeline items
+        document.addEventListener('DOMContentLoaded', function() {
+            // Animate timeline items
+            const timelineItems = document.querySelectorAll('.timeline-content');
+            timelineItems.forEach((item, index) => {
+                item.style.opacity = '0';
+                item.style.transform = 'translateY(30px)';
+                item.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                setTimeout(() => {
+                    observer.observe(item);
+                }, index * 200);
+            });
+
+            // Animate philosophy cards
+            const philosophyCards = document.querySelectorAll('.philosophy-card');
+            philosophyCards.forEach((card, index) => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(30px)';
+                card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                setTimeout(() => {
+                    observer.observe(card);
+                }, index * 150);
+            });
+
+            // Animate value cards
+            const valueCards = document.querySelectorAll('.value-card');
+            valueCards.forEach((card, index) => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(30px)';
+                card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                setTimeout(() => {
+                    observer.observe(card);
+                }, index * 150);
+            });
+
+            // Animate personal section
+            const personalText = document.querySelector('.personal-text');
+            const personalImage = document.querySelector('.personal-image');
+            
+            personalText.style.opacity = '0';
+            personalText.style.transform = 'translateX(-30px)';
+            personalText.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+            
+            personalImage.style.opacity = '0';
+            personalImage.style.transform = 'translateX(30px)';
+            personalImage.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+            
+            observer.observe(personalText);
+            observer.observe(personalImage);
+        });
+
+        // Initialize with header scroll check
+        window.dispatchEvent(new Event('scroll'));
+    </script>
+</body>
+</html>

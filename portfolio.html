@@ -1,0 +1,1619 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | Rabiu Sani Muhammad (Aljauromanee) - Brand Design Projects</title>
+    <meta name="description" content="Explore Rabiu Sani Muhammad's portfolio of brand design, UI/UX, and visual identity projects. View case studies of successful design implementations.">
+    <meta name="keywords" content="Brand Design Portfolio, UI/UX Projects, Logo Design, Brand Identity, Graphic Design Work">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="images/favicon_io/favicon.ico">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        :root {
+            --primary: #1a1a2e;
+            --secondary: #16213e;
+            --accent: #0f9b8e;
+            --accent-light: #1dc9b7;
+            --light: #f8f9fa;
+            --gray: #6c757d;
+            --dark: #212529;
+            --success: #28a745;
+            --warning: #ffc107;
+        }
+
+        body {
+            background-color: #f9f9f9;
+            color: #333;
+            line-height: 1.6;
+            padding-top: 80px;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header & Navigation - Same as other pages */
+        header {
+            background-color: rgba(26, 26, 46, 0.95);
+            color: white;
+            padding: 18px 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        header.scrolled {
+            padding: 12px 0;
+            background-color: rgba(26, 26, 46, 0.98);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--accent-light);
+            text-decoration: none;
+            font-family: 'Montserrat', sans-serif;
+            letter-spacing: 0.5px;
+        }
+
+        .logo span {
+            color: white;
+            font-weight: 600;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 35px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s;
+            padding: 8px 16px;
+            border-radius: 4px;
+            font-size: 1rem;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: var(--accent-light);
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after,
+        .nav-links a.active::after {
+            width: 80%;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-light);
+        }
+
+        .nav-links a.active {
+            color: var(--accent-light);
+        }
+
+        .mobile-menu {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: white;
+            background: none;
+            border: none;
+            padding: 5px;
+            z-index: 1001;
+        }
+
+        /* Portfolio Hero Section */
+        .portfolio-hero {
+            background: linear-gradient(135deg, rgba(26, 26, 46, 0.92) 0%, rgba(22, 33, 62, 0.88) 100%), url('images/hero-bg-img.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: white;
+            padding: 120px 0 80px;
+            text-align: center;
+            margin-bottom: 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .portfolio-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 20% 50%, rgba(15, 155, 142, 0.15) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 20%, rgba(29, 201, 183, 0.1) 0%, transparent 50%);
+        }
+
+        .portfolio-hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .portfolio-hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 25px;
+            line-height: 1.2;
+            font-weight: 800;
+            font-family: 'Montserrat', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .portfolio-hero .highlight {
+            color: var(--accent-light);
+            font-weight: 800;
+            position: relative;
+            display: inline-block;
+        }
+
+        .portfolio-hero .highlight::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, transparent, var(--accent-light), transparent);
+            bottom: -8px;
+            left: 0;
+            border-radius: 2px;
+        }
+
+        .portfolio-hero p {
+            font-size: 1.2rem;
+            margin-bottom: 35px;
+            color: rgba(255, 255, 255, 0.9);
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.7;
+        }
+
+        /* Portfolio Filter */
+        .portfolio-filter {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 60px;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            padding: 12px 28px;
+            background: rgba(15, 155, 142, 0.1);
+            color: var(--accent);
+            border: 1px solid rgba(15, 155, 142, 0.2);
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s;
+            font-size: 1rem;
+        }
+
+        .filter-btn.active,
+        .filter-btn:hover {
+            background: var(--accent);
+            color: white;
+            border-color: var(--accent);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(15, 155, 142, 0.3);
+        }
+
+        /* Portfolio Grid */
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 40px;
+            margin-bottom: 80px;
+        }
+
+        .portfolio-item {
+            background-color: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
+            transition: all 0.4s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .portfolio-item:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+        }
+
+        .portfolio-img {
+            height: 280px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .portfolio-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .portfolio-item:hover .portfolio-img img {
+            transform: scale(1.1);
+        }
+
+        .portfolio-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(transparent, rgba(15, 155, 142, 0.8));
+            display: flex;
+            align-items: flex-end;
+            justify-content: flex-start;
+            padding: 25px;
+            opacity: 0;
+            transition: opacity 0.4s;
+        }
+
+        .portfolio-item:hover .portfolio-overlay {
+            opacity: 1;
+        }
+
+        .portfolio-category {
+            background: white;
+            color: var(--accent);
+            padding: 8px 18px;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .portfolio-info {
+            padding: 30px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .portfolio-info h3 {
+            font-size: 1.5rem;
+            margin-bottom: 12px;
+            color: var(--secondary);
+            font-weight: 600;
+        }
+
+        .portfolio-info p {
+            color: var(--gray);
+            font-size: 0.95rem;
+            line-height: 1.7;
+            margin-bottom: 25px;
+            flex-grow: 1;
+        }
+
+        .portfolio-stats {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            font-size: 0.9rem;
+            color: #777;
+        }
+
+        .stat {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .portfolio-actions {
+            display: flex;
+            gap: 15px;
+        }
+
+        .view-btn, .case-study-btn {
+            flex: 1;
+            display: inline-block;
+            padding: 12px 20px;
+            border-radius: 8px;
+            font-weight: 600;
+            text-align: center;
+            transition: all 0.3s;
+            font-size: 0.95rem;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .view-btn {
+            background: rgba(15, 155, 142, 0.1);
+            color: var(--accent);
+            border: 1px solid rgba(15, 155, 142, 0.3);
+        }
+
+        .view-btn:hover {
+            background: var(--accent);
+            color: white;
+            border-color: var(--accent);
+        }
+
+        .case-study-btn {
+            background: var(--accent);
+            color: white;
+            border: 1px solid var(--accent);
+        }
+
+        .case-study-btn:hover {
+            background: var(--accent-light);
+            border-color: var(--accent-light);
+            transform: translateY(-2px);
+        }
+
+        /* Featured Case Study */
+        .featured-case {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 100px 0;
+            border-radius: 20px;
+            margin-bottom: 100px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .featured-case::before {
+            content: '';
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.05) 0%, transparent 70%);
+            top: -200px;
+            right: -200px;
+            border-radius: 50%;
+        }
+
+        .case-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .case-text h2 {
+            font-size: 2.6rem;
+            margin-bottom: 25px;
+            color: white;
+            font-weight: 700;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .case-text p {
+            margin-bottom: 20px;
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .case-stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .case-stat {
+            text-align: center;
+            padding: 25px 20px;
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 15px;
+            transition: all 0.3s;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .case-stat:hover {
+            background: rgba(255, 255, 255, 0.12);
+            transform: translateY(-8px);
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .case-stat h3 {
+            font-size: 2.2rem;
+            color: var(--accent-light);
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .case-stat p {
+            color: rgba(255, 255, 255, 0.85);
+            font-size: 0.95rem;
+            margin-bottom: 0;
+        }
+
+        .case-image {
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+            transition: transform 0.5s;
+        }
+
+        .case-image:hover {
+            transform: translateY(-10px) scale(1.02);
+        }
+
+        .case-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Client Testimonials */
+        .testimonials {
+            margin-bottom: 100px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.6rem;
+            color: var(--primary);
+            margin-bottom: 60px;
+            position: relative;
+            padding-bottom: 15px;
+            font-weight: 700;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--accent), var(--accent-light));
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+
+        .testimonial-slider {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .testimonial {
+            background: white;
+            padding: 50px;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+            text-align: center;
+            margin: 0 15px;
+        }
+
+        .testimonial-content {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            color: #555;
+            margin-bottom: 30px;
+            font-style: italic;
+            position: relative;
+        }
+
+        .testimonial-content::before,
+        .testimonial-content::after {
+            content: '"';
+            font-size: 3rem;
+            color: var(--accent-light);
+            opacity: 0.3;
+            position: absolute;
+            font-family: serif;
+        }
+
+        .testimonial-content::before {
+            top: -20px;
+            left: -10px;
+        }
+
+        .testimonial-content::after {
+            bottom: -40px;
+            right: -10px;
+        }
+
+        .client-info {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .client-avatar {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 3px solid var(--accent-light);
+        }
+
+        .client-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .client-details h4 {
+            font-size: 1.3rem;
+            color: var(--secondary);
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+
+        .client-details p {
+            color: var(--gray);
+            font-size: 0.95rem;
+        }
+
+        .testimonial-nav {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 40px;
+        }
+
+        .nav-btn {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: white;
+            border: 2px solid rgba(15, 155, 142, 0.2);
+            color: var(--accent);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+            font-size: 1.2rem;
+        }
+
+        .nav-btn:hover {
+            background: var(--accent);
+            color: white;
+            border-color: var(--accent);
+            transform: translateY(-3px);
+        }
+
+        /* Process Section */
+        .process {
+            margin-bottom: 100px;
+        }
+
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 60px;
+        }
+
+        .process-step {
+            text-align: center;
+            padding: 40px 30px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+            transition: all 0.4s;
+            position: relative;
+            border-top: 5px solid var(--accent);
+        }
+
+        .process-step:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.12);
+        }
+
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--accent) 0%, var(--accent-light) 100%);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 0 auto 25px;
+        }
+
+        .process-step h3 {
+            font-size: 1.5rem;
+            color: var(--secondary);
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .process-step p {
+            color: #666;
+            line-height: 1.7;
+        }
+
+        /* Portfolio CTA */
+        .portfolio-cta {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+            margin-bottom: 80px;
+            border-radius: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .portfolio-cta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 Z" fill="rgba(255,255,255,0.03)"/></svg>');
+            background-size: cover;
+        }
+
+        .portfolio-cta-content {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .portfolio-cta-content h3 {
+            font-size: 2.5rem;
+            margin-bottom: 25px;
+            color: white;
+            font-weight: 700;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .portfolio-cta-content p {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.7;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 16px 36px;
+            background: linear-gradient(135deg, var(--accent) 0%, var(--accent-light) 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            text-align: center;
+            font-size: 1rem;
+            box-shadow: 0 4px 15px rgba(15, 155, 142, 0.3);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 100%;
+            background: linear-gradient(135deg, var(--accent-light) 0%, var(--accent) 100%);
+            transition: width 0.5s ease;
+            z-index: -1;
+        }
+
+        .btn:hover::before {
+            width: 100%;
+        }
+
+        .btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(15, 155, 142, 0.4);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid white;
+            color: white;
+            box-shadow: none;
+        }
+
+        .btn-outline::before {
+            background: white;
+        }
+
+        .btn-outline:hover {
+            color: var(--primary);
+        }
+
+        /* Footer - Same as other pages */
+        footer {
+            background-color: var(--primary);
+            color: white;
+            padding: 70px 0 25px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 Z" fill="rgba(15,155,142,0.05)"/></svg>');
+            background-size: cover;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 50px;
+            margin-bottom: 50px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .footer-column h3 {
+            font-size: 1.6rem;
+            margin-bottom: 25px;
+            color: var(--accent-light);
+            font-weight: 600;
+        }
+
+        .footer-column p {
+            color: #ccc;
+            margin-bottom: 20px;
+            line-height: 1.7;
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 15px;
+        }
+
+        .footer-column ul li a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .footer-column ul li a:hover {
+            color: var(--accent-light);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 25px;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            background-color: rgba(255, 255, 255, 0.08);
+            border-radius: 50%;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s;
+            font-size: 1.1rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .social-links a:hover {
+            background-color: var(--accent-light);
+            transform: translateY(-5px) scale(1.1);
+            border-color: var(--accent-light);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #aaa;
+            font-size: 0.9rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1100px) {
+            .portfolio-hero h1 {
+                font-size: 3rem;
+            }
+            
+            .case-content {
+                gap: 50px;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .case-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .portfolio-hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .case-image {
+                order: -1;
+            }
+            
+            .portfolio-grid {
+                grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+                gap: 30px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding-top: 70px;
+            }
+            
+            header {
+                padding: 15px 0;
+            }
+            
+            .nav-links {
+                display: none;
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background-color: var(--primary);
+                flex-direction: column;
+                padding: 100px 30px 30px;
+                text-align: center;
+                gap: 20px;
+                z-index: 999;
+                overflow-y: auto;
+            }
+            
+            .nav-links.active {
+                display: flex;
+            }
+            
+            .nav-links li {
+                width: 100%;
+            }
+            
+            .nav-links a {
+                display: block;
+                width: 100%;
+                padding: 15px;
+                font-size: 1.2rem;
+                border-radius: 8px;
+                background: rgba(255, 255, 255, 0.05);
+            }
+            
+            .mobile-menu {
+                display: block;
+            }
+            
+            .logo {
+                font-size: 1.6rem;
+            }
+            
+            .portfolio-hero {
+                padding: 80px 0 50px;
+                background-attachment: scroll;
+            }
+            
+            .portfolio-hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .portfolio-hero p {
+                font-size: 1.1rem;
+            }
+            
+            .section-title {
+                font-size: 2.2rem;
+            }
+            
+            .portfolio-grid {
+                grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            }
+            
+            .portfolio-img {
+                height: 240px;
+            }
+            
+            .testimonial {
+                padding: 30px;
+            }
+            
+            .process-steps {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .portfolio-hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .section-title,
+            .case-text h2,
+            .portfolio-cta-content h3 {
+                font-size: 2rem;
+            }
+            
+            .portfolio-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .portfolio-actions {
+                flex-direction: column;
+            }
+            
+            .case-stats {
+                grid-template-columns: 1fr;
+            }
+            
+            .portfolio-filter {
+                gap: 10px;
+            }
+            
+            .filter-btn {
+                padding: 10px 20px;
+                font-size: 0.9rem;
+            }
+            
+            .client-info {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header id="header">
+        <div class="container">
+            <nav>
+                <a href="index.html" class="logo">Rabiu<span>Sani</span></a>
+                <ul class="nav-links">
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="skills.html">Tech Stacks</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <button class="mobile-menu" id="mobileMenuBtn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Portfolio Hero Section -->
+    <section class="portfolio-hero">
+        <div class="container">
+            <div class="portfolio-hero-content">
+                <h1>My <span class="highlight">Design Portfolio</span> & Case Studies</h1>
+                <p>Explore a curated collection of my brand design, UI/UX, and visual identity projects. Each case study showcases strategic design solutions that have delivered measurable results for clients across various industries.</p>
+                <div class="cta-buttons">
+                    <a href="#featured" class="btn"><i class="fas fa-star"></i> View Featured Work</a>
+                    <a href="https://docs.google.com/forms/d/1Y1LIMzMhg0LOWikTFFiS_IdFxDjbT6g7R4cnBgjwCbs/edit" class="btn btn-outline"><i class="fas fa-briefcase"></i> Start Your Project</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Filter -->
+    <div class="container">
+        <div class="portfolio-filter">
+            <button class="filter-btn active" data-filter="all">All Projects</button>
+            <button class="filter-btn" data-filter="branding">Brand Identity</button>
+            <button class="filter-btn" data-filter="uiux">UI/UX Design</button>
+            <button class="filter-btn" data-filter="print">Print & Packaging</button>
+            <button class="filter-btn" data-filter="web">Web Design</button>
+            <button class="filter-btn" data-filter="motion">Motion Graphics</button>
+        </div>
+    </div>
+
+    <!-- Portfolio Grid -->
+    <div class="container">
+        <div class="portfolio-grid">
+            <!-- Project 1 -->
+            <div class="portfolio-item" data-category="branding">
+                <div class="portfolio-img">
+                    <img src="images/finTech.jpg" alt="EcoFresh Organic Brand Identity">
+                    <div class="portfolio-overlay">
+                        <span class="portfolio-category">Brand Identity</span>
+                    </div>
+                </div>
+                <div class="portfolio-info">
+                    <h3>EcoFresh Organic Foods</h3>
+                    <p>Complete brand identity system for an organic food company, including logo, packaging, and marketing materials that communicate freshness and sustainability.</p>
+                    
+                    <div class="portfolio-stats">
+                        <div class="stat"><i class="fas fa-calendar"></i> 3 Months</div>
+                        <div class="stat"><i class="fas fa-tasks"></i> 12 Deliverables</div>
+                        <div class="stat"><i class="fas fa-chart-line"></i> +40% Brand Recognition</div>
+                    </div>
+                    
+                    <div class="portfolio-actions">
+                        <a href="ecofresh.html" class="view-btn">View Details</a>
+                        <a href="contact.html?project=EcoFresh" class="case-study-btn">Case Study</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Project 2 -->
+            <div class="portfolio-item" data-category="uiux">
+                <div class="portfolio-img">
+                    <img src="images/finTech.jpg" alt="FinTech Mobile App UI/UX">
+                    <div class="portfolio-overlay">
+                        <span class="portfolio-category">UI/UX Design</span>
+                    </div>
+                </div>
+                <div class="portfolio-info">
+                    <h3>FinTech Mobile Banking App</h3>
+                    <p>User experience and interface design for a mobile banking application, focusing on intuitive navigation, security, and seamless transaction flows.</p>
+                    
+                    <div class="portfolio-stats">
+                        <div class="stat"><i class="fas fa-calendar"></i> 4 Months</div>
+                        <div class="stat"><i class="fas fa-mobile-alt"></i> 45+ Screens</div>
+                        <div class="stat"><i class="fas fa-chart-line"></i> +35% User Retention</div>
+                    </div>
+                    
+                    <div class="portfolio-actions">
+                        <a href="project-fintech.html" class="view-btn">View Details</a>
+                        <a href="contact.html?project=FinTech" class="case-study-btn">Case Study</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Project 3 -->
+            <div class="portfolio-item" data-category="print">
+                <div class="portfolio-img">
+                    <img src="images/ecofresh-ide.jpg" alt="Corporate Branding Package">
+                    <div class="portfolio-overlay">
+                        <span class="portfolio-category">Print Design</span>
+                    </div>
+                </div>
+                <div class="portfolio-info">
+                    <h3>Corporate Branding Package</h3>
+                    <p>Complete corporate identity package including business cards, letterheads, envelopes, and presentation folders for a multinational consulting firm.</p>
+                    
+                    <div class="portfolio-stats">
+                        <div class="stat"><i class="fas fa-calendar"></i> 0 Months</div>
+                        <div class="stat"><i class="fas fa-file-alt"></i> 8+ Items</div>
+                        <div class="stat"><i class="fas fa-chart-line"></i> Professional Image</div>
+                    </div>
+                    
+                    <div class="portfolio-actions">
+                        <a href="project-corporate.html" class="view-btn">View Details</a>
+                        <a href="contact.html?project=Corporate" class="case-study-btn">Case Study</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Project 4 -->
+            <div class="portfolio-item" data-category="web">
+                <div class="portfolio-img">
+                    <img src="images/abbaIsa.png" alt="E-commerce Website Design">
+                    <div class="portfolio-overlay">
+                        <span class="portfolio-category">Web Design</span>
+                    </div>
+                </div>
+                <div class="portfolio-info">
+                    <h3>E-commerce Fashion and Design Platform</h3>
+                    <p>Complete website design and user experience for a fashion e-commerce platform, focusing on conversion optimization and mobile responsiveness.</p>
+                    
+                    <div class="portfolio-stats">
+                        <div class="stat"><i class="fas fa-calendar"></i> 5 hours</div>
+                        <div class="stat"><i class="fas fa-shopping-cart"></i> 60+ Product Pages</div>
+                        <div class="stat"><i class="fas fa-chart-line"></i> +28% Conversion Rate</div>
+                    </div>
+                    
+                    <div class="portfolio-actions">
+                        <a href="https://mypagedot.github.io/abbaIsa/" class="view-btn">View the platform</a>
+                        <a href="contact.html?project=Fashion" class="case-study-btn">Case Study</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Project 5 -->
+            <div class="portfolio-item" data-category="branding">
+                <div class="portfolio-img">
+                    <img src="images/coporatebranding.jpg" alt="Tech Startup Branding">
+                    <div class="portfolio-overlay">
+                        <span class="portfolio-category">Brand Identity</span>
+                    </div>
+                </div>
+                <div class="portfolio-info">
+                    <h3>Tech Startup Brand System</h3>
+                    <p>Complete visual identity for a technology startup, including logo, brand guidelines, website design, and marketing collateral.</p>
+                    
+                    <div class="portfolio-stats">
+                        <div class="stat"><i class="fas fa-calendar"></i> 3 Months</div>
+                        <div class="stat"><i class="fas fa-palette"></i> Full System</div>
+                        <div class="stat"><i class="fas fa-chart-line"></i> +50% Investor Interest</div>
+                    </div>
+                    
+                    <div class="portfolio-actions">
+                        <a href="project-tech.html" class="view-btn">View Details</a>
+                        <a href="contact.html?project=TechStartup" class="case-study-btn">Case Study</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Project 6 -->
+            <div class="portfolio-item" data-category="motion">
+                <div class="portfolio-img">
+                    <img src="images/coporatebranding.jpg" alt="Animated Brand Video">
+                    <div class="portfolio-overlay">
+                        <span class="portfolio-category">Motion Graphics</span>
+                    </div>
+                </div>
+                <div class="portfolio-info">
+                    <h3>Animated Brand Story Video</h3>
+                    <p>2-minute animated brand story video for a healthcare company, explaining their services and values through engaging motion graphics.</p>
+                    
+                    <div class="portfolio-stats">
+                        <div class="stat"><i class="fas fa-calendar"></i> 6 Weeks</div>
+                        <div class="stat"><i class="fas fa-video"></i> 2 Min Video</div>
+                        <div class="stat"><i class="fas fa-chart-line"></i> +300% Engagement</div>
+                    </div>
+                    
+                    <div class="portfolio-actions">
+                        <a href="project-motion.html" class="view-btn">View Details</a>
+                        <a href="contact.html" class="case-study-btn">Case Study</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Featured Case Study -->
+    <section class="featured-case" id="featured">
+        <div class="container">
+            <div class="case-content">
+                <div class="case-text">
+                    <h2>Featured Case Study: EcoFresh Organic Foods</h2>
+                    <p>This comprehensive brand identity project transformed a local organic food company into a nationally recognized brand. The challenge was to create a visual identity that communicated freshness, sustainability, and trustworthiness while appealing to health-conscious consumers.</p>
+                    <p>The solution included a complete brand system: logo, color palette, typography, packaging design, marketing materials, and digital presence. The new identity resulted in a 40% increase in brand recognition and a 25% growth in sales within the first year.</p>
+                    
+                    <div class="case-stats">
+                        <div class="case-stat">
+                            <h3>40%</h3>
+                            <p>Increase in Brand Recognition</p>
+                        </div>
+                        <div class="case-stat">
+                            <h3>25%</h3>
+                            <p>Sales Growth in First Year</p>
+                        </div>
+                        <div class="case-stat">
+                            <h3>12</h3>
+                            <p>Brand Identity Deliverables</p>
+                        </div>
+                        <div class="case-stat">
+                            <h3>3</h3>
+                            <p>Months Project Duration</p>
+                        </div>
+                    </div>
+                    
+                    <a href="skills.html" class="btn" style="margin-top: 30px;"><i class="fas fa-file-alt"></i> View my Skills</a>
+                </div>
+                
+                <div class="case-image">
+                    <img src="images/organic-foods.jpg" alt="EcoFresh Case Study">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Client Testimonials -->
+    <section class="testimonials">
+        <div class="container">
+            <h2 class="section-title">Client Testimonials</h2>
+            
+            <div class="testimonial-slider">
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        Rabiu transformed our brand from a local business to a nationally recognized name. His strategic approach to design not only improved our visual identity but also our market position. The results exceeded our expectations.
+                    </div>
+                    
+                    <div class="client-info">
+                        <div class="client-avatar">
+                            <img src="images/Pi tech.jpeg" alt="Sarah Johnson">
+                        </div>
+                        <div class="client-details">
+                            <h4>Prince</h4>
+                            <p>CEO, Pi technology</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Additional testimonials would be added here for slider functionality -->
+            </div>
+            
+            <div class="testimonial-nav">
+                <button class="nav-btn prev-btn"><i class="fas fa-chevron-left"></i></button>
+                <button class="nav-btn next-btn"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Design Process -->
+    <section class="process">
+        <div class="container">
+            <h2 class="section-title">My Design Process</h2>
+            
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="step-number">01</div>
+                    <h3>Discovery & Research</h3>
+                    <p>Understanding your business, audience, and market through in-depth research and analysis to establish project foundations.</p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">02</div>
+                    <h3>Strategy & Planning</h3>
+                    <p>Developing a strategic approach based on research findings, defining project goals, timelines, and success metrics.</p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">03</div>
+                    <h3>Design & Creation</h3>
+                    <p>Translating strategy into visual concepts, creating designs that communicate your brand's unique value proposition.</p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">04</div>
+                    <h3>Refinement & Delivery</h3>
+                    <p>Refining designs based on feedback, preparing final deliverables, and ensuring all elements work seamlessly together.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio CTA -->
+    <section class="portfolio-cta">
+        <div class="container">
+            <div class="portfolio-cta-content">
+                <h3>Ready to Bring Your Vision to Life?</h3>
+                <p>Let's collaborate to create a powerful visual identity that communicates your unique value, connects with your audience, and drives business growth. Schedule a free design consultation today.</p>
+                <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
+                    <a href="services.html" class="btn"><i class="fas fa-concierge-bell"></i> View Services</a>
+                    <a href="https://forms.gle/KHfLihRz1UQKJ1YR6" class="btn btn-outline"><i class="fas fa-calendar-check"></i> Book Consultation</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Rabiu Sani Muhammad</h3>
+                    <p>Professional Full Brand Designer specializing in comprehensive visual identity systems, UI/UX design, and strategic brand development for businesses of all sizes.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-behance"></i></a>
+                        <a href="#"><i class="fab fa-dribbble"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
+                        <li><a href="about.html"><i class="fas fa-chevron-right"></i> About Me</a></li>
+                        <li><a href="portfolio.html"><i class="fas fa-chevron-right"></i> Portfolio</a></li>
+                        <li><a href="services.html"><i class="fas fa-chevron-right"></i> Services</a></li>
+                        <li><a href="contact.html"><i class="fas fa-chevron-right"></i> Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Info</h3>
+                    <ul>
+                        <li><a href="mailto:contact@aljauromanee.com"><i class="fas fa-envelope"></i> contact@aljauromanee.com</a></li>
+                        <li><a href="tel:+2347068766833"><i class="fas fa-phone-alt"></i> +234 706 876 6833</a></li>
+                        <li><a href="#"><i class="fas fa-map-marker-alt"></i> FCT, Abuja, Nigeria</a></li>
+                        <li><a href="#"><i class="fas fa-globe"></i> Available for International Projects</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2026 Rabiu Sani Muhammad (Aljauromanee). All Rights Reserved. | Professional Brand Design Portfolio</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navLinks = document.querySelector('.nav-links');
+        const menuIcon = mobileMenuBtn.querySelector('i');
+        
+        mobileMenuBtn.addEventListener('click', function() {
+            navLinks.classList.toggle('active');
+            
+            // Toggle menu icon
+            if (navLinks.classList.contains('active')) {
+                menuIcon.classList.remove('fa-bars');
+                menuIcon.classList.add('fa-times');
+                document.body.style.overflow = 'hidden';
+            } else {
+                menuIcon.classList.remove('fa-times');
+                menuIcon.classList.add('fa-bars');
+                document.body.style.overflow = 'auto';
+            }
+        });
+
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                menuIcon.classList.remove('fa-times');
+                menuIcon.classList.add('fa-bars');
+                document.body.style.overflow = 'auto';
+                
+                // Update active class
+                document.querySelectorAll('.nav-links a').forEach(a => {
+                    a.classList.remove('active');
+                });
+                link.classList.add('active');
+            });
+        });
+
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.getElementById('header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Portfolio Filtering
+        document.querySelectorAll('.filter-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                // Update active button
+                document.querySelectorAll('.filter-btn').forEach(btn => {
+                    btn.classList.remove('active');
+                });
+                this.classList.add('active');
+                
+                // Filter portfolio items
+                const filter = this.getAttribute('data-filter');
+                const portfolioItems = document.querySelectorAll('.portfolio-item');
+                
+                portfolioItems.forEach(item => {
+                    if (filter === 'all' || item.getAttribute('data-category') === filter) {
+                        item.style.display = 'flex';
+                        setTimeout(() => {
+                            item.style.opacity = '1';
+                            item.style.transform = 'translateY(0)';
+                        }, 10);
+                    } else {
+                        item.style.opacity = '0';
+                        item.style.transform = 'translateY(20px)';
+                        setTimeout(() => {
+                            item.style.display = 'none';
+                        }, 300);
+                    }
+                });
+            });
+        });
+
+        // Testimonial Slider
+        const testimonials = [
+            {
+                content: "Rabiu transformed our brand from a local business to a nationally recognized name. His strategic approach to design not only improved our visual identity but also our market position. The results exceeded our expectations.",
+                name: "Prince",
+                role: "CEO, Pi Technology",
+                avatar: "images/Pi tech.jpeg"
+            },
+            {
+                content: "The UI/UX design for our banking app was exceptional. Rabiu's understanding of user behavior and attention to detail resulted in an intuitive interface that our customers love. User retention increased by 35% after launch.",
+                name: "Al-Amin Ibrahim",
+                role: "Product Manager, FinTech Solutions",
+                avatar: "images/man icon.webp"
+            },
+            {
+                content: "Working with Rabiu on our corporate branding was a game-changer. He delivered a comprehensive identity system that perfectly represents our company values and has been instrumental in our international expansion.",
+                name: "Usman Madani",
+                role: "CEO, Zanna technology",
+                avatar: "images/us madani.jpeg"
+            }
+        ];
+
+        let currentTestimonial = 0;
+        const testimonialElement = document.querySelector('.testimonial');
+        const prevBtn = document.querySelector('.prev-btn');
+        const nextBtn = document.querySelector('.next-btn');
+
+        function updateTestimonial(index) {
+            const testimonial = testimonials[index];
+            testimonialElement.innerHTML = `
+                <div class="testimonial-content">
+                    ${testimonial.content}
+                </div>
+                
+                <div class="client-info">
+                    <div class="client-avatar">
+                        <img src="${testimonial.avatar}" alt="${testimonial.name}">
+                    </div>
+                    <div class="client-details">
+                        <h4>${testimonial.name}</h4>
+                        <p>${testimonial.role}</p>
+                    </div>
+                </div>
+            `;
+        }
+
+        prevBtn.addEventListener('click', () => {
+            currentTestimonial = (currentTestimonial - 1 + testimonials.length) % testimonials.length;
+            updateTestimonial(currentTestimonial);
+        });
+
+        nextBtn.addEventListener('click', () => {
+            currentTestimonial = (currentTestimonial + 1) % testimonials.length;
+            updateTestimonial(currentTestimonial);
+        });
+
+        // Initialize testimonial
+        updateTestimonial(currentTestimonial);
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                
+                // Only prevent default for on-page anchor links
+                if (href.startsWith('#') && href.length > 1) {
+                    e.preventDefault();
+                    
+                    const targetElement = document.querySelector(href);
+                    if(targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                }
+            });
+        });
+
+        // Add animation to elements on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Animate portfolio items
+        document.addEventListener('DOMContentLoaded', function() {
+            // Animate portfolio items
+            const portfolioItems = document.querySelectorAll('.portfolio-item');
+            portfolioItems.forEach((item, index) => {
+                item.style.opacity = '0';
+                item.style.transform = 'translateY(30px)';
+                item.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                setTimeout(() => {
+                    observer.observe(item);
+                }, index * 150);
+            });
+
+            // Animate process steps
+            const processSteps = document.querySelectorAll('.process-step');
+            processSteps.forEach((step, index) => {
+                step.style.opacity = '0';
+                step.style.transform = 'translateY(30px)';
+                step.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                setTimeout(() => {
+                    observer.observe(step);
+                }, index * 200);
+            });
+
+            // Animate case study
+            const caseText = document.querySelector('.case-text');
+            const caseImage = document.querySelector('.case-image');
+            
+            if (caseText) {
+                caseText.style.opacity = '0';
+                caseText.style.transform = 'translateX(-30px)';
+                caseText.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+                observer.observe(caseText);
+            }
+            
+            if (caseImage) {
+                caseImage.style.opacity = '0';
+                caseImage.style.transform = 'translateX(30px)';
+                caseImage.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+                observer.observe(caseImage);
+            }
+        });
+
+        // Initialize with header scroll check
+        window.dispatchEvent(new Event('scroll'));
+    </script>
+</body>
+</html>

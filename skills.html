@@ -1,0 +1,1718 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech Stack & Tools | Rabiu Sani Muhammad - Full Brand Designer</title>
+    <meta name="description" content="Explore the complete technology stacks and design tools used by Rabiu Sani Muhammad. From frontend development to brand design systems, discover the tools that power exceptional digital experiences.">
+    <meta name="keywords" content="Technology Stack, Design Tools, Development Tools, Frontend Development, UI/UX Design, Brand Design Tools, Adobe Suite, Figma, Web Development">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="images/favicon_io/favicon.ico">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        :root {
+            --primary: #1a1a2e;
+            --secondary: #16213e;
+            --accent: #0f9b8e;
+            --accent-light: #1dc9b7;
+            --light: #f8f9fa;
+            --gray: #6c757d;
+            --dark: #212529;
+            --success: #28a745;
+            --warning: #ffc107;
+        }
+
+        body {
+            background-color: #f9f9f9;
+            color: #333;
+            line-height: 1.6;
+            padding-top: 80px;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header & Navigation - Same as other pages */
+        header {
+            background-color: rgba(26, 26, 46, 0.95);
+            color: white;
+            padding: 18px 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        header.scrolled {
+            padding: 12px 0;
+            background-color: rgba(26, 26, 46, 0.98);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--accent-light);
+            text-decoration: none;
+            font-family: 'Montserrat', sans-serif;
+            letter-spacing: 0.5px;
+        }
+
+        .logo span {
+            color: white;
+            font-weight: 600;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 35px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s;
+            padding: 8px 16px;
+            border-radius: 4px;
+            font-size: 1rem;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: var(--accent-light);
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after,
+        .nav-links a.active::after {
+            width: 80%;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-light);
+        }
+
+        .nav-links a.active {
+            color: var(--accent-light);
+        }
+
+        .mobile-menu {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: white;
+            background: none;
+            border: none;
+            padding: 5px;
+            z-index: 1001;
+        }
+
+        /* Tech Stack Hero Section */
+        .tech-hero {
+            background: linear-gradient(135deg, rgba(26, 26, 46, 0.92) 0%, rgba(22, 33, 62, 0.675) 100%), url('images/CTA1.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: white;
+            padding: 120px 0 80px;
+            text-align: center;
+            margin-bottom: 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .tech-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 20% 50%, rgba(15, 155, 142, 0.15) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 20%, rgba(29, 201, 183, 0.1) 0%, transparent 50%);
+        }
+
+        .tech-hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .tech-hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 25px;
+            line-height: 1.2;
+            font-weight: 800;
+            font-family: 'Montserrat', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .tech-hero .highlight {
+            color: var(--accent-light);
+            font-weight: 800;
+            position: relative;
+            display: inline-block;
+        }
+
+        .tech-hero .highlight::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, transparent, var(--accent-light), transparent);
+            bottom: -8px;
+            left: 0;
+            border-radius: 2px;
+        }
+
+        .tech-hero p {
+            font-size: 1.2rem;
+            margin-bottom: 35px;
+            color: rgba(255, 255, 255, 0.9);
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.7;
+        }
+
+        /* Tech Stack Overview */
+        .tech-overview {
+            margin-bottom: 100px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.6rem;
+            color: var(--primary);
+            margin-bottom: 60px;
+            position: relative;
+            padding-bottom: 15px;
+            font-weight: 700;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--accent), var(--accent-light));
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+
+        .tech-intro {
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto 70px;
+            color: #555;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .tech-stack-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+
+        .stack-card {
+            background-color: white;
+            padding: 40px 30px;
+            border-radius: 15px;
+            text-align: center;
+            transition: all 0.4s;
+            border: 1px solid #eee;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .stack-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 0;
+            background: linear-gradient(135deg, var(--accent) 0%, var(--accent-light) 100%);
+            transition: height 0.4s ease;
+            z-index: -1;
+        }
+
+        .stack-card:hover::before {
+            height: 100%;
+        }
+
+        .stack-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 20px 50px rgba(15, 155, 142, 0.15);
+            border-color: transparent;
+        }
+
+        .stack-card:hover i,
+        .stack-card:hover h3,
+        .stack-card:hover p {
+            color: white;
+        }
+
+        .stack-icon {
+            font-size: 3.2rem;
+            color: var(--accent);
+            margin-bottom: 25px;
+            transition: color 0.4s;
+            width: 80px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(15, 155, 142, 0.1);
+            border-radius: 50%;
+        }
+
+        .stack-card h3 {
+            font-size: 1.8rem;
+            color: var(--secondary);
+            margin-bottom: 20px;
+            transition: color 0.4s;
+            font-weight: 600;
+        }
+
+        .stack-card p {
+            color: #666;
+            line-height: 1.7;
+            transition: color 0.4s;
+            margin-bottom: 25px;
+            flex-grow: 1;
+        }
+
+        /* Detailed Tech Stacks */
+        .detailed-tech {
+            margin-bottom: 100px;
+        }
+
+        .tech-category {
+            background: white;
+            border-radius: 20px;
+            padding: 50px;
+            margin-bottom: 50px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+            transition: transform 0.4s;
+        }
+
+        .tech-category:hover {
+            transform: translateY(-10px);
+        }
+
+        .tech-category-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 40px;
+        }
+
+        .tech-category-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--accent) 0%, var(--accent-light) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 25px;
+            color: white;
+            font-size: 2rem;
+        }
+
+        .tech-category-header h3 {
+            font-size: 2rem;
+            color: var(--primary);
+            font-weight: 700;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .tech-category-header p {
+            color: #666;
+            margin-top: 10px;
+            max-width: 800px;
+        }
+
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .tool-item {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 15px;
+            border-left: 4px solid var(--accent);
+            transition: all 0.3s;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+        }
+
+        .tool-item:hover {
+            background: white;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transform: translateY(-5px);
+        }
+
+        .tool-icon {
+            font-size: 2.5rem;
+            color: var(--accent);
+            margin-bottom: 20px;
+            height: 60px;
+            width: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(15, 155, 142, 0.1);
+            border-radius: 50%;
+        }
+
+        .tool-item h4 {
+            font-size: 1.3rem;
+            color: var(--secondary);
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .tool-item p {
+            color: #666;
+            line-height: 1.7;
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+            min-height: 60px;
+        }
+
+        .skill-bar {
+            width: 100%;
+            height: 8px;
+            background: #e9ecef;
+            border-radius: 4px;
+            margin-top: 10px;
+            overflow: hidden;
+        }
+
+        .skill-level {
+            height: 100%;
+            background: linear-gradient(90deg, var(--accent), var(--accent-light));
+            border-radius: 4px;
+            transition: width 1.5s ease-in-out;
+        }
+
+        .tool-level {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            margin-top: 15px;
+        }
+
+        .level-text {
+            color: var(--accent);
+            font-weight: 700;
+            font-size: 0.9rem;
+        }
+
+        .level-percentage {
+            color: #666;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        /* Workflow Section */
+        .workflow-section {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 100px 0;
+            border-radius: 20px;
+            margin-bottom: 100px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .workflow-section::before {
+            content: '';
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.05) 0%, transparent 70%);
+            top: -200px;
+            right: -200px;
+            border-radius: 50%;
+        }
+
+        .workflow-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .workflow-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 60px;
+        }
+
+        .workflow-step {
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 15px;
+            padding: 40px 30px;
+            text-align: center;
+            transition: all 0.4s;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .workflow-step:hover {
+            transform: translateY(-15px);
+            background: rgba(255, 255, 255, 0.12);
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .step-icon {
+            font-size: 2.5rem;
+            color: var(--accent-light);
+            margin-bottom: 25px;
+            background: rgba(29, 201, 183, 0.1);
+            width: 70px;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            margin: 0 auto 25px;
+        }
+
+        .workflow-step h3 {
+            font-size: 1.6rem;
+            margin-bottom: 15px;
+            color: white;
+            font-weight: 600;
+        }
+
+        .workflow-step p {
+            color: rgba(255, 255, 255, 0.85);
+            line-height: 1.7;
+            font-size: 0.95rem;
+        }
+
+        /* Tool Integration Section */
+        .tool-integration {
+            margin-bottom: 100px;
+        }
+
+        .integration-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 50px;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .integration-text {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .integration-text h3 {
+            font-size: 2.2rem;
+            color: var(--primary);
+            margin-bottom: 25px;
+            font-weight: 700;
+        }
+
+        .integration-text p {
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 30px;
+            font-size: 1.1rem;
+        }
+
+        .integration-visual {
+            flex: 1;
+            min-width: 300px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            border-radius: 20px;
+            padding: 50px;
+            position: relative;
+            overflow: hidden;
+            min-height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .integration-visual::before {
+            content: '';
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(15, 155, 142, 0.2) 0%, transparent 70%);
+            top: -100px;
+            right: -100px;
+            border-radius: 50%;
+        }
+
+        .tool-icons {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .tool-icons div {
+            background: rgba(255, 255, 255, 0.1);
+            width: 80px;
+            height: 80px;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            color: white;
+            transition: all 0.3s;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .tool-icons div:hover {
+            transform: scale(1.1);
+            background: rgba(255, 255, 255, 0.15);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Technology CTA */
+        .tech-cta {
+            background: linear-gradient(135deg, rgba(15, 155, 142, 0.9) 0%, rgba(29, 201, 183, 0.9) 100%), url('images/tech-cta-bg.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+            margin-bottom: 80px;
+            border-radius: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .tech-cta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 Z" fill="rgba(255,255,255,0.05)"/></svg>');
+            background-size: cover;
+        }
+
+        .tech-cta-content {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .tech-cta-content h3 {
+            font-size: 2.5rem;
+            margin-bottom: 25px;
+            color: white;
+            font-weight: 700;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .tech-cta-content p {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.7;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 16px 36px;
+            background: linear-gradient(135deg, var(--accent) 0%, var(--accent-light) 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            text-align: center;
+            font-size: 1rem;
+            box-shadow: 0 4px 15px rgba(15, 155, 142, 0.3);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 100%;
+            background: linear-gradient(135deg, var(--accent-light) 0%, var(--accent) 100%);
+            transition: width 0.5s ease;
+            z-index: -1;
+        }
+
+        .btn:hover::before {
+            width: 100%;
+        }
+
+        .btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(15, 155, 142, 0.4);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid white;
+            color: white;
+            box-shadow: none;
+        }
+
+        .btn-outline::before {
+            background: white;
+        }
+
+        .btn-outline:hover {
+            color: var(--primary);
+        }
+
+        /* Footer - Same as other pages */
+        footer {
+            background-color: var(--primary);
+            color: white;
+            padding: 70px 0 25px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 Z" fill="rgba(15,155,142,0.05)"/></svg>');
+            background-size: cover;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 50px;
+            margin-bottom: 50px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .footer-column h3 {
+            font-size: 1.6rem;
+            margin-bottom: 25px;
+            color: var(--accent-light);
+            font-weight: 600;
+        }
+
+        .footer-column p {
+            color: #ccc;
+            margin-bottom: 20px;
+            line-height: 1.7;
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 15px;
+        }
+
+        .footer-column ul li a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .footer-column ul li a:hover {
+            color: var(--accent-light);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 25px;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            background-color: rgba(255, 255, 255, 0.08);
+            border-radius: 50%;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s;
+            font-size: 1.1rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .social-links a:hover {
+            background-color: var(--accent-light);
+            transform: translateY(-5px) scale(1.1);
+            border-color: var(--accent-light);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #aaa;
+            font-size: 0.9rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1100px) {
+            .tech-hero h1 {
+                font-size: 3rem;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .tech-hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .tech-category {
+                padding: 40px 30px;
+            }
+            
+            .tech-category-header {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .tech-category-icon {
+                margin-right: 0;
+                margin-bottom: 20px;
+            }
+            
+            .integration-content {
+                flex-direction: column;
+            }
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding-top: 70px;
+            }
+            
+            header {
+                padding: 15px 0;
+            }
+            
+            .nav-links {
+                display: none;
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background-color: var(--primary);
+                flex-direction: column;
+                padding: 100px 30px 30px;
+                text-align: center;
+                gap: 20px;
+                z-index: 999;
+                overflow-y: auto;
+            }
+            
+            .nav-links.active {
+                display: flex;
+            }
+            
+            .nav-links li {
+                width: 100%;
+            }
+            
+            .nav-links a {
+                display: block;
+                width: 100%;
+                padding: 15px;
+                font-size: 1.2rem;
+                border-radius: 8px;
+                background: rgba(255, 255, 255, 0.05);
+            }
+            
+            .mobile-menu {
+                display: block;
+            }
+            
+            .logo {
+                font-size: 1.6rem;
+            }
+            
+            .tech-hero {
+                padding: 80px 0 50px;
+                background-attachment: scroll;
+            }
+            
+            .tech-hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .tech-hero p {
+                font-size: 1.1rem;
+            }
+            
+            .section-title {
+                font-size: 2.2rem;
+            }
+            
+            .tech-category {
+                padding: 30px 20px;
+            }
+            
+            .tools-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .workflow-steps {
+                grid-template-columns: 1fr;
+            }
+            
+            .integration-visual {
+                padding: 30px;
+                min-height: 300px;
+            }
+            
+            .tool-icons {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .tech-hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .section-title,
+            .tech-category-header h3,
+            .tech-cta-content h3 {
+                font-size: 2rem;
+            }
+            
+            .stack-card {
+                padding: 35px 25px;
+            }
+            
+            .tech-category-header h3 {
+                font-size: 1.8rem;
+            }
+            
+            .integration-visual {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header id="header">
+        <div class="container">
+            <nav>
+                <a href="index.html" class="logo">Rabiu<span>Sani</span></a>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="tech-stack.html" class="active">Tech Stack</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <button class="mobile-menu" id="mobileMenuBtn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Tech Stack Hero Section -->
+    <section class="tech-hero">
+        <div class="container">
+            <div class="tech-hero-content">
+                <h1>Development & Design <span class="highlight">Technology Stack</span></h1>
+                <p>Explore the comprehensive technology stacks and design tools I use to create exceptional digital experiences. From frontend development to brand identity systems, discover the tools that power modern, responsive, and user-centered designs.</p>
+                <div class="cta-buttons">
+                    <a href="#stacks" class="btn"><i class="fas fa-layer-group"></i> Explore Tech Stacks</a>
+                    <a href="portfolio.html" class="btn btn-outline"><i class="fas fa-eye"></i> View Work Examples</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tech Stack Overview -->
+    <section class="tech-overview" id="stacks">
+        <div class="container">
+            <h2 class="section-title">My Technology Stacks</h2>
+            <p class="tech-intro">
+                I employ a carefully curated selection of tools and technologies that work together seamlessly to deliver high-quality design and development solutions. Each stack is tailored to project requirements, ensuring optimal performance, maintainability, and user experience.
+            </p>
+            
+            <div class="tech-stack-grid">
+                <div class="stack-card">
+                    <div class="stack-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3>Frontend Development</h3>
+                    <p>Building responsive, interactive user interfaces with modern web technologies and frameworks for optimal user experience.</p>
+                </div>
+                
+                <div class="stack-card">
+                    <div class="stack-icon">
+                        <i class="fas fa-server"></i>
+                    </div>
+                    <h3>Backend Development</h3>
+                    <p>Server-side logic, APIs, and business logic implementation for scalable and robust web applications.</p>
+                </div>
+                
+                <div class="stack-card">
+                    <div class="stack-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3>Mobile Development</h3>
+                    <p>Cross-platform mobile application development for iOS and Android with modern frameworks.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Detailed Tech Stacks -->
+    <section class="detailed-tech">
+        <div class="container">
+            <h2 class="section-title">Detailed Technology Breakdown</h2>
+            
+            <!-- Frontend Development -->
+            <div class="tech-category">
+                <div class="tech-category-header">
+                    <div class="tech-category-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <div>
+                        <h3>Frontend Development</h3>
+                        <p>Building responsive, interactive user interfaces with modern web technologies and frameworks.</p>
+                    </div>
+                </div>
+                
+                <div class="tools-grid">
+                    <div class="tool-item">
+                        <div class="tool-icon">
+                            <i class="fab fa-html5"></i>
+                        </div>
+                        <h4>HTML5</h4>
+                        <p>Semantic markup and modern HTML features for structuring web content.</p>
+                        <div class="skill-bar">
+                            <div class="skill-level" style="width: 95%;"></div>
+                        </div>
+                        <div class="tool-level">
+                            <span class="level-text">Advanced</span>
+                            <span class="level-percentage">95%</span>
+                        </div>
+                    </div>
+                    
+                    <div class="tool-item">
+                        <div class="tool-icon">
+                            <i class="fab fa-css3-alt"></i>
+                        </div>
+                        <h4>CSS3</h4>
+                        <p>Advanced styling, animations, and responsive layouts for modern web interfaces.</p>
+                        <div class="skill-bar">
+                            <div class="skill-level" style="width: 90%;"></div>
+                        </div>
+                        <div class="tool-level">
+                            <span class="level-text">Advanced</span>
+                            <span class="level-percentage">90%</span>
+                        </div>
+                    </div>
+                    
+                    <div class="tool-item">
+                        <div class="tool-icon">
+                            <i class="fab fa-js-square"></i>
+                        </div>
+                        <h4>JavaScript</h4>
+                        <p>ES6+, modern JavaScript features for creating interactive web experiences.</p>
+                        <div class="skill-bar">
+                            <div class="skill-level" style="width: 85%;"></div>
+                        </div>
+                        <div class="tool-level">
+                            <span class="level-text">Advanced</span>
+                            <span class="level-percentage">85%</span>
+                        </div>
+                    </div>
+                    
+                    <div class="tool-item">
+                        <div class="tool-icon">
+                            <i class="fab fa-react"></i>
+                        </div>
+                        <h4>React.js</h4>
+                        <p>Component-based UI development for building dynamic user interfaces.</p>
+                        <div class="skill-bar">
+                            <div class="skill-level" style="width: 75%;"></div>
+                        </div>
+                        <div class="tool-level">
+                            <span class="level-text">Intermediate</span>
+                            <span class="level-percentage">75%</span>
+                        </div>
+                    </div>
+                    
+                    <div class="tool-item">
+                        <div class="tool-icon">
+                            <i class="fab fa-bootstrap"></i>
+                        </div>
+                        <h4>Bootstrap</h4>
+                        <p>Responsive frontend framework for rapid web development.</p>
+                        <div class="skill-bar">
+                            <div class="skill-level" style="width: 85%;"></div>
+                        </div>
+                        <div class="tool-level">
+                            <span class="level-text">Advanced</span>
+                            <span class="level-percentage">85%</span>
+                        </div>
+                    </div>
+                    
+                    <div class="tool-item">
+                        <div class="tool-icon">
+                            <i class="fas fa-wind"></i>
+                        </div>
+                        <h4>Tailwind CSS</h4>
+                        <p>Utility-first CSS framework for custom designs without leaving HTML.</p>
+                        <div class="skill-bar">
+                            <div class="skill-level" style="width: 90%;"></div>
+                        </div>
+                        <div class="tool-level">
+                            <span class="level-text">Advanced</span>
+                            <span class="level-percentage">90%</span>
+                        </div>
+                    </div>
+                    
+                    <div class="tool-item">
+                        <div class="tool-icon">
+                            <i class="fab fa-wordpress"></i>
+                        </div>
+                        <h4>WordPress</h4>
+                        <p>Content management system for building dynamic websites and blogs.</p>
+                        <div class="skill-bar">
+                            <div class="skill-level" style="width: 80%;"></div>
+                        </div>
+                        <div class="tool-level">
+                            <span class="level-text">Advanced</span>
+                            <span class="level-percentage">80%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Backend Development -->
+            <div class="tech-category">
+                <div class="tech-category-header">
+                    <div class="tech-category-icon">
+                        <i class="fas fa-server"></i>
+                    </div>
+                    <div>
+                        <h3>Backend Development</h3>
+                        <p>Server-side logic, APIs, and business logic implementation for scalable web applications.</p>
+                    </div>
+                </div>
+                
+                <div class="tools-grid">
+                    <div class="tool-item">
+                        <div class="tool-icon">
+                            <i class="fab fa-node-js"></i>
+                        </div>
+                        <h4>Node.js</h4>
+                        <p>JavaScript runtime for server-side development and building scalable network applications.</p>
+                        <div class="skill-bar">
+                            <div class="skill-level" style="width: 70%;"></div>
+                        </div>
+                        <div class="tool-level">
+                            <span class="level-text">Intermediate</span>
+                            <span class="level-percentage">70%</span>
+                        </div>
+                    </div>
+                    
+                    <div class="tool-item">
+                        <div class="tool-icon">
+                            <i class="fab fa-php"></i>
+                        </div>
+                        <h4>PHP</h4>
+                        <p>Server-side scripting language for web development and dynamic content.</p>
+                        <div class="skill-bar">
+                            <div class="skill-level" style="width: 65%;"></div>
+                        </div>
+                        <div class="tool-level">
+                            <span class="level-text">Intermediate</span>
+                            <span class="level-percentage">65%</span>
+                        </div>
+                    </div>
+                    
+                    <div class="tool-item">
+                        <div class="tool-icon">
+                            <i class="fas fa-laravel"></i>
+                        </div>
+                        <h4>Laravel</h4>
+                        <p>PHP web application framework with elegant syntax and robust features.</p>
+                        <div class="skill-bar">
+                            <div class="skill-level" style="width: 70%;"></div>
+                        </div>
+                        <div class="tool-level">
+                            <span class="level-text">Intermediate</span>
+                            <span class="level-percentage">70%</span>
+                        </div>
+                    </div>
+                    
+                    <div class="tool-item">
+                        <div class="tool-icon">
+                            <i class="fas fa-forward"></i>
+                        </div>
+                        <h4>Next.js</h4>
+                        <p>React framework for production with server-side rendering and static generation.</p>
+                        <div class="skill-bar">
+                            <div class="skill-level" style="width: 75%;"></div>
+                        </div>
+                        <div class="tool-level">
+                            <span class="level-text">Intermediate</span>
+                            <span class="level-percentage">75%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Mobile Development -->
+            <div class="tech-category">
+                <div class="tech-category-header">
+                    <div class="tech-category-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <div>
+                        <h3>Mobile Development</h3>
+                        <p>Cross-platform mobile application development for iOS and Android devices.</p>
+                    </div>
+                </div>
+                
+                <div class="tools-grid">
+                    <div class="tool-item">
+                        <div class="tool-icon">
+                            <i class="fab fa-react"></i>
+                        </div>
+                        <h4>React Native</h4>
+                        <p>Cross-platform mobile framework for building native apps with React.</p>
+                        <div class="skill-bar">
+                            <div class="skill-level" style="width: 65%;"></div>
+                        </div>
+                        <div class="tool-level">
+                            <span class="level-text">Intermediate</span>
+                            <span class="level-percentage">65%</span>
+                        </div>
+                    </div>
+                    
+                    <div class="tool-item">
+                        <div class="tool-icon">
+                            <i class="fas fa-forward"></i>
+                        </div>
+                        <h4>Next.js</h4>
+                        <p>Full-stack React framework for building hybrid web and mobile applications.</p>
+                        <div class="skill-bar">
+                            <div class="skill-level" style="width: 75%;"></div>
+                        </div>
+                        <div class="tool-level">
+                            <span class="level-text">Intermediate</span>
+                            <span class="level-percentage">75%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Development Tools & Design -->
+            <div class="tech-category">
+                <div class="tech-category-header">
+                    <div class="tech-category-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <div>
+                        <h3>Development Tools & Design</h3>
+                        <p>Essential tools for modern software development, design, and collaboration.</p>
+                    </div>
+                </div>
+                
+                <div class="tools-grid">
+                    <div class="tool-item">
+                        <div class="tool-icon">
+                            <i class="fab fa-git-alt"></i>
+                        </div>
+                        <h4>Git</h4>
+                        <p>Version control system for tracking changes and collaboration in code development.</p>
+                        <div class="skill-bar">
+                            <div class="skill-level" style="width: 90%;"></div>
+                        </div>
+                        <div class="tool-level">
+                            <span class="level-text">Advanced</span>
+                            <span class="level-percentage">90%</span>
+                        </div>
+                    </div>
+                    
+                    <div class="tool-item">
+                        <div class="tool-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <h4>VS Code</h4>
+                        <p>Code editor with built-in Git support, debugging, and extensive extensions.</p>
+                        <div class="skill-bar">
+                            <div class="skill-level" style="width: 95%;"></div>
+                        </div>
+                        <div class="tool-level">
+                            <span class="level-text">Advanced</span>
+                            <span class="level-percentage">95%</span>
+                        </div>
+                    </div>
+                    
+                    <div class="tool-item">
+                        <div class="tool-icon">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <h4>Cursor AI</h4>
+                        <p>AI-powered code editor with intelligent suggestions and code completion.</p>
+                        <div class="skill-bar">
+                            <div class="skill-level" style="width: 80%;"></div>
+                        </div>
+                        <div class="tool-level">
+                            <span class="level-text">Intermediate</span>
+                            <span class="level-percentage">80%</span>
+                        </div>
+                    </div>
+                    
+                    <div class="tool-item">
+                        <div class="tool-icon">
+                            <i class="fas fa-paint-brush"></i>
+                        </div>
+                        <h4>Canva</h4>
+                        <p>Graphic design platform for creating social media graphics and marketing materials.</p>
+                        <div class="skill-bar">
+                            <div class="skill-level" style="width: 85%;"></div>
+                        </div>
+                         <div class="tool-level">
+                            <span class="level-text">Advanced</span>
+                            <span class="level-percentage">95%</span>
+                        </div>
+                    </div>
+                    
+                    <div class="tool-item">
+                        <div class="tool-icon">
+                            <i class="fas fa-pen-nib"></i>
+                        </div>
+                        <h4>CorelDraw</h4>
+                        <p>Vector graphics editor for logo design, illustrations, and print materials.</p>
+                        <div class="skill-bar">
+                            <div class="skill-level" style="width: 75%;"></div>
+                        </div>
+                        <div class="tool-level">
+                            <span class="level-text">Advanced</span>
+                            <span class="level-percentage">95%</span>
+                        </div>
+                    </div>
+
+                      <div class="tool-item">
+                        <div class="tool-icon">
+                           
+                             <i class="fas fa-laravel"></i>
+                        </div>
+                        <h4>Photoshop</h4>
+                        <p>Professional image editing and manipulation software for digital art and photo retouching.</p>
+                        <div class="skill-bar">
+                            <div class="skill-level" style="width: 75%;"></div>
+                        </div>
+                        <div class="tool-level">
+                            <span class="level-text">Intermediate</span>
+                            <span class="level-percentage">75%</span>
+                        </div>
+                    </div>
+                    
+                    <div class="tool-item">
+                        <div class="tool-icon">
+                            <i class="fab fa-figma"></i>
+                        </div>
+                        <h4>Figma</h4>
+                        <p>Design and prototyping tool for collaborative interface design.</p>
+                        <div class="skill-bar">
+                            <div class="skill-level" style="width: 70%;"></div>
+                        </div>
+                        <div class="tool-level">
+                            <span class="level-text">Intermediate</span>
+                            <span class="level-percentage">70%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Workflow Section -->
+    <section class="workflow-section">
+        <div class="container">
+            <h2 class="section-title" style="color: white;">My Integrated Workflow</h2>
+            <p style="text-align: center; color: rgba(255, 255, 255, 0.9); max-width: 800px; margin: 0 auto 50px; font-size: 1.1rem; line-height: 1.8;">
+                I follow a structured workflow that integrates design and development tools at each stage, ensuring seamless collaboration, efficient processes, and exceptional results.
+            </p>
+            
+            <div class="workflow-content">
+                <div class="workflow-steps">
+                    <div class="workflow-step">
+                        <div class="step-icon">
+                            <i class="fas fa-search"></i>
+                        </div>
+                        <h3>Research & Discovery</h3>
+                        <p>Using analytics tools, user research platforms, and competitive analysis to inform design decisions and strategy.</p>
+                    </div>
+                    
+                    <div class="workflow-step">
+                        <div class="step-icon">
+                            <i class="fas fa-pencil-ruler"></i>
+                        </div>
+                        <h3>Design & Prototyping</h3>
+                        <p>Figma, Canva, and CorelDraw for wireframing, creating design systems, and interactive prototypes.</p>
+                    </div>
+                    
+                    <div class="workflow-step">
+                        <div class="step-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <h3>Development</h3>
+                        <p>VS Code, React, and modern frameworks with responsive coding practices to bring designs to life.</p>
+                    </div>
+                    
+                    <div class="workflow-step">
+                        <div class="step-icon">
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                        <h3>Launch & Optimize</h3>
+                        <p>Performance testing, cross-browser compatibility checks, and analytics setup for continuous improvement.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tool Integration Section -->
+    <section class="tool-integration">
+        <div class="container">
+            <div class="integration-content">
+                <div class="integration-text">
+                    <h3>Seamless Tool Integration</h3>
+                    <p>I don't just use tools in isolation—I create integrated workflows that connect design and development processes for maximum efficiency and consistency.</p>
+                    <p>My approach ensures that design systems in Figma translate directly to reusable code components, brand assets maintain consistency across all platforms, and collaboration happens seamlessly between stakeholders.</p>
+                    <p>This integrated methodology reduces development time, maintains design integrity, and delivers cohesive brand experiences across all touchpoints.</p>
+                    <a href="contact.html" class="btn"><i class="fas fa-comments"></i> Discuss Your Project Needs</a>
+                </div>
+                
+                <div class="integration-visual">
+                    <div class="tool-icons">
+                        <div><i class="fab fa-react"></i></div>
+                        <div><i class="fab fa-js-square"></i></div>
+                        <div><i class="fab fa-html5"></i></div>
+                        <div><i class="fab fa-css3-alt"></i></div>
+                        <div><i class="fab fa-figma"></i></div>
+                        <div><i class="fab fa-wordpress"></i></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tech CTA -->
+    <section class="tech-cta">
+        <div class="container">
+            <div class="tech-cta-content">
+                <h3>Need a Specific Technology Solution?</h3>
+                <p>Whether you need a website built with React and WordPress, a mobile app with React Native, or a comprehensive design system in Figma—I have the tools and expertise to bring your vision to life.</p>
+                <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
+                    <a href="services.html" class="btn"><i class="fas fa-concierge-bell"></i> View My Services</a>
+                    <a href="contact.html" class="btn btn-outline"><i class="fas fa-calendar-check"></i> Schedule Tech Consultation</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Rabiu Sani Muhammad</h3>
+                    <p>Professional Full Brand Designer specializing in comprehensive visual identity systems, UI/UX design, and strategic brand development for businesses of all sizes.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-behance"></i></a>
+                        <a href="#"><i class="fab fa-dribbble"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
+                        <li><a href="about.html"><i class="fas fa-chevron-right"></i> About Me</a></li>
+                        <li><a href="portfolio.html"><i class="fas fa-chevron-right"></i> Portfolio</a></li>
+                        <li><a href="services.html"><i class="fas fa-chevron-right"></i> Services</a></li>
+                        <li><a href="tech-stack.html"><i class="fas fa-chevron-right"></i> Tech Stack</a></li>
+                        <li><a href="contact.html"><i class="fas fa-chevron-right"></i> Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Info</h3>
+                    <ul>
+                        <li><a href="mailto:contact@aljauromanee.com"><i class="fas fa-envelope"></i> aljauromanee@gmail.com</a></li>
+                        <li><a href="tel:+2347068766833"><i class="fas fa-phone-alt"></i> +234 91 23234431</a></li>
+                        <li><a href="#"><i class="fas fa-map-marker-alt"></i> FCT, Abuja, Nigeria</a></li>
+                        <li><a href="#"><i class="fas fa-globe"></i> Available for International Projects</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2026 Rabiu Sani Muhammad (Aljauromanee). All Rights Reserved. | Professional Brand Design Portfolio</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navLinks = document.querySelector('.nav-links');
+        const menuIcon = mobileMenuBtn.querySelector('i');
+        
+        mobileMenuBtn.addEventListener('click', function() {
+            navLinks.classList.toggle('active');
+            
+            // Toggle menu icon
+            if (navLinks.classList.contains('active')) {
+                menuIcon.classList.remove('fa-bars');
+                menuIcon.classList.add('fa-times');
+                document.body.style.overflow = 'hidden';
+            } else {
+                menuIcon.classList.remove('fa-times');
+                menuIcon.classList.add('fa-bars');
+                document.body.style.overflow = 'auto';
+            }
+        });
+
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                menuIcon.classList.remove('fa-times');
+                menuIcon.classList.add('fa-bars');
+                document.body.style.overflow = 'auto';
+                
+                // Update active class
+                document.querySelectorAll('.nav-links a').forEach(a => {
+                    a.classList.remove('active');
+                });
+                link.classList.add('active');
+            });
+        });
+
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.getElementById('header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                
+                // Only prevent default for on-page anchor links
+                if (href.startsWith('#') && href.length > 1) {
+                    e.preventDefault();
+                    
+                    const targetElement = document.querySelector(href);
+                    if(targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                }
+            });
+        });
+
+        // Animate skill bars on scroll
+        const skillBars = document.querySelectorAll('.skill-level');
+        
+        const animateSkillBars = () => {
+            skillBars.forEach(bar => {
+                const percentage = bar.style.width;
+                bar.style.width = '0%';
+                
+                setTimeout(() => {
+                    bar.style.width = percentage;
+                }, 300);
+            });
+        };
+
+        // Add animation to elements on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                    
+                    // Animate skill bars when tech category is visible
+                    if (entry.target.classList.contains('tech-category')) {
+                        setTimeout(() => {
+                            animateSkillBars();
+                        }, 500);
+                    }
+                }
+            });
+        }, observerOptions);
+
+        // Animate elements
+        document.addEventListener('DOMContentLoaded', function() {
+            // Animate stack cards
+            const stackCards = document.querySelectorAll('.stack-card');
+            stackCards.forEach((card, index) => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(30px)';
+                card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                setTimeout(() => {
+                    observer.observe(card);
+                }, index * 150);
+            });
+
+            // Animate tech categories
+            const techCategories = document.querySelectorAll('.tech-category');
+            techCategories.forEach((category, index) => {
+                category.style.opacity = '0';
+                category.style.transform = 'translateY(30px)';
+                category.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                setTimeout(() => {
+                    observer.observe(category);
+                }, index * 200);
+            });
+
+            // Animate tool items
+            const toolItems = document.querySelectorAll('.tool-item');
+            toolItems.forEach((item, index) => {
+                item.style.opacity = '0';
+                item.style.transform = 'translateY(20px)';
+                item.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                setTimeout(() => {
+                    observer.observe(item);
+                }, index * 50);
+            });
+
+            // Animate workflow steps
+            const workflowSteps = document.querySelectorAll('.workflow-step');
+            workflowSteps.forEach((step, index) => {
+                step.style.opacity = '0';
+                step.style.transform = 'translateY(30px)';
+                step.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                setTimeout(() => {
+                    observer.observe(step);
+                }, index * 200);
+            });
+
+            // Animate integration visual
+            const integrationVisual = document.querySelector('.integration-visual');
+            integrationVisual.style.opacity = '0';
+            integrationVisual.style.transform = 'translateX(30px)';
+            integrationVisual.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+            observer.observe(integrationVisual);
+        });
+
+        // Initialize with header scroll check
+        window.dispatchEvent(new Event('scroll'));
+    </script>
+</body>
+</html>

@@ -1,0 +1,1519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services & Design Tools | Rabiu Sani Muhammad - Full Brand Designer</title>
+    <meta name="description" content="Explore professional brand design services and the advanced design tools used by Rabiu Sani Muhammad. Comprehensive solutions for brand identity, UI/UX, and visual design.">
+    <meta name="keywords" content="Brand Design Services, UI/UX Design, Logo Design, Brand Identity, Design Tools, Adobe Creative Suite, Figma, Web Design Services">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="images/favicon_io/favicon.ico">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        :root {
+            --primary: #1a1a2e;
+            --secondary: #16213e;
+            --accent: #0f9b8e;
+            --accent-light: #1dc9b7;
+            --light: #f8f9fa;
+            --gray: #6c757d;
+            --dark: #212529;
+            --success: #28a745;
+            --warning: #ffc107;
+        }
+
+        body {
+            background-color: #f9f9f9;
+            color: #333;
+            line-height: 1.6;
+            padding-top: 80px;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header & Navigation - Same as other pages */
+        header {
+            background-color: rgba(26, 26, 46, 0.95);
+            color: white;
+            padding: 18px 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        header.scrolled {
+            padding: 12px 0;
+            background-color: rgba(26, 26, 46, 0.98);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--accent-light);
+            text-decoration: none;
+            font-family: 'Montserrat', sans-serif;
+            letter-spacing: 0.5px;
+        }
+
+        .logo span {
+            color: white;
+            font-weight: 600;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s;
+            padding: 8px 12px;
+            border-radius: 4px;
+            font-size: 1rem;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: var(--accent-light);
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after,
+        .nav-links a.active::after {
+            width: 80%;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-light);
+        }
+
+        .nav-links a.active {
+            color: var(--accent-light);
+        }
+
+        .mobile-menu {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: white;
+            background: none;
+            border: none;
+            padding: 5px;
+            z-index: 1001;
+        }
+
+        /* Services Hero Section */
+        .services-hero {
+            background: linear-gradient(135deg, rgba(26, 26, 46, 0.92) 0%, rgba(22, 33, 62, 0.88) 100%), url('images/hero-bg-img.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: white;
+            padding: 120px 0 80px;
+            text-align: center;
+            margin-bottom: 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .services-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 20% 50%, rgba(15, 155, 142, 0.15) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 20%, rgba(29, 201, 183, 0.1) 0%, transparent 50%);
+        }
+
+        .services-hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .services-hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 25px;
+            line-height: 1.2;
+            font-weight: 800;
+            font-family: 'Montserrat', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .services-hero .highlight {
+            color: var(--accent-light);
+            font-weight: 800;
+            position: relative;
+            display: inline-block;
+        }
+
+        .services-hero .highlight::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, transparent, var(--accent-light), transparent);
+            bottom: -8px;
+            left: 0;
+            border-radius: 2px;
+        }
+
+        .services-hero p {
+            font-size: 1.2rem;
+            margin-bottom: 35px;
+            color: rgba(255, 255, 255, 0.9);
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.7;
+        }
+
+        /* Services Overview */
+        .services-overview {
+            margin-bottom: 100px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.6rem;
+            color: var(--primary);
+            margin-bottom: 60px;
+            position: relative;
+            padding-bottom: 15px;
+            font-weight: 700;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--accent), var(--accent-light));
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 40px;
+            margin-bottom: 80px;
+        }
+
+        .service-card {
+            background-color: white;
+            padding: 45px 35px;
+            border-radius: 15px;
+            text-align: center;
+            transition: all 0.4s;
+            border: 1px solid #eee;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 0;
+            background: linear-gradient(135deg, var(--accent) 0%, var(--accent-light) 100%);
+            transition: height 0.4s ease;
+            z-index: -1;
+        }
+
+        .service-card:hover::before {
+            height: 100%;
+        }
+
+        .service-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 20px 50px rgba(15, 155, 142, 0.15);
+            border-color: transparent;
+        }
+
+        .service-card:hover i,
+        .service-card:hover h3,
+        .service-card:hover p,
+        .service-card:hover .service-features li {
+            color: white;
+        }
+
+        .service-card i {
+            font-size: 3.2rem;
+            color: var(--accent);
+            margin-bottom: 25px;
+            transition: color 0.4s;
+        }
+
+        .service-card h3 {
+            font-size: 1.6rem;
+            color: var(--secondary);
+            margin-bottom: 20px;
+            transition: color 0.4s;
+            font-weight: 600;
+        }
+
+        .service-card p {
+            color: #666;
+            line-height: 1.7;
+            transition: color 0.4s;
+            margin-bottom: 25px;
+            flex-grow: 1;
+        }
+
+        .service-features {
+            text-align: left;
+            margin-top: 20px;
+        }
+
+        .service-features li {
+            color: #666;
+            margin-bottom: 10px;
+            padding-left: 20px;
+            position: relative;
+            transition: color 0.4s;
+        }
+
+        .service-features li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: bold;
+            transition: color 0.4s;
+        }
+
+        .service-card:hover .service-features li::before {
+            color: white;
+        }
+
+        /* Detailed Services */
+        .detailed-services {
+            margin-bottom: 100px;
+        }
+
+        .service-category {
+            background: white;
+            border-radius: 20px;
+            padding: 50px;
+            margin-bottom: 50px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+            transition: transform 0.4s;
+        }
+
+        .service-category:hover {
+            transform: translateY(-10px);
+        }
+
+        .service-category-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+        .service-category-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--accent) 0%, var(--accent-light) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 25px;
+            color: white;
+            font-size: 2rem;
+        }
+
+        .service-category-header h3 {
+            font-size: 2rem;
+            color: var(--primary);
+            font-weight: 700;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .service-items {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .service-item {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 15px;
+            border-left: 4px solid var(--accent);
+            transition: all 0.3s;
+        }
+
+        .service-item:hover {
+            background: white;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transform: translateY(-5px);
+        }
+
+        .service-item h4 {
+            font-size: 1.3rem;
+            color: var(--secondary);
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .service-item p {
+            color: #666;
+            line-height: 1.7;
+            margin-bottom: 15px;
+        }
+
+        .service-price {
+            color: var(--accent);
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        /* Design Tools Section */
+        .design-tools {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 100px 0;
+            border-radius: 20px;
+            margin-bottom: 100px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .design-tools::before {
+            content: '';
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.05) 0%, transparent 70%);
+            top: -200px;
+            right: -200px;
+            border-radius: 50%;
+        }
+
+        .tools-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 60px;
+        }
+
+        .tool-card {
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 15px;
+            padding: 40px 30px;
+            text-align: center;
+            transition: all 0.4s;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .tool-card:hover {
+            transform: translateY(-15px);
+            background: rgba(255, 255, 255, 0.12);
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .tool-icon {
+            font-size: 3rem;
+            color: var(--accent-light);
+            margin-bottom: 25px;
+        }
+
+        .tool-card h3 {
+            font-size: 1.6rem;
+            margin-bottom: 15px;
+            color: white;
+            font-weight: 600;
+        }
+
+        .tool-card p {
+            color: rgba(255, 255, 255, 0.85);
+            line-height: 1.7;
+            font-size: 0.95rem;
+        }
+
+        /* Work Process */
+        .work-process {
+            margin-bottom: 100px;
+        }
+
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 60px;
+        }
+
+        .process-step {
+            text-align: center;
+            padding: 40px 30px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+            transition: all 0.4s;
+            position: relative;
+            border-top: 5px solid var(--accent);
+        }
+
+        .process-step:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.12);
+        }
+
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--accent) 0%, var(--accent-light) 100%);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 0 auto 25px;
+        }
+
+        .process-step h3 {
+            font-size: 1.5rem;
+            color: var(--secondary);
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .process-step p {
+            color: #666;
+            line-height: 1.7;
+        }
+
+        /* Pricing Packages */
+        .pricing {
+            margin-bottom: 100px;
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .pricing-card {
+            background: white;
+            border-radius: 20px;
+            padding: 50px 40px;
+            text-align: center;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+            transition: all 0.4s;
+            position: relative;
+            overflow: hidden;
+            border: 2px solid #eee;
+        }
+
+        .pricing-card.featured {
+            border-color: var(--accent);
+            transform: scale(1.05);
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12);
+        }
+
+        .pricing-card.featured:hover {
+            transform: translateY(-15px) scale(1.05);
+        }
+
+        .pricing-badge {
+            position: absolute;
+            top: 20px;
+            right: -30px;
+            background: var(--accent);
+            color: white;
+            padding: 8px 40px;
+            transform: rotate(45deg);
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .pricing-header {
+            margin-bottom: 30px;
+        }
+
+        .pricing-header h3 {
+            font-size: 1.8rem;
+            color: var(--secondary);
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .pricing-price {
+            font-size: 3rem;
+            color: var(--accent);
+            font-weight: 800;
+            margin-bottom: 10px;
+        }
+
+        .pricing-period {
+            color: #777;
+            font-size: 1rem;
+        }
+
+        .pricing-features {
+            list-style: none;
+            margin-bottom: 40px;
+            text-align: left;
+        }
+
+        .pricing-features li {
+            padding: 12px 0;
+            border-bottom: 1px solid #eee;
+            color: #555;
+            display: flex;
+            align-items: center;
+        }
+
+        .pricing-features li i {
+            color: var(--accent);
+            margin-right: 10px;
+            font-size: 1.1rem;
+        }
+
+        .pricing-features li.disabled {
+            color: #bbb;
+        }
+
+        .pricing-features li.disabled i {
+            color: #bbb;
+        }
+
+        /* Services CTA */
+        .services-cta {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+            margin-bottom: 80px;
+            border-radius: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .services-cta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 Z" fill="rgba(255,255,255,0.03)"/></svg>');
+            background-size: cover;
+        }
+
+        .services-cta-content {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .services-cta-content h3 {
+            font-size: 2.5rem;
+            margin-bottom: 25px;
+            color: white;
+            font-weight: 700;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .services-cta-content p {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.7;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 16px 36px;
+            background: linear-gradient(135deg, var(--accent) 0%, var(--accent-light) 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            text-align: center;
+            font-size: 1rem;
+            box-shadow: 0 4px 15px rgba(15, 155, 142, 0.3);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 100%;
+            background: linear-gradient(135deg, var(--accent-light) 0%, var(--accent) 100%);
+            transition: width 0.5s ease;
+            z-index: -1;
+        }
+
+        .btn:hover::before {
+            width: 100%;
+        }
+
+        .btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(15, 155, 142, 0.4);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid white;
+            color: white;
+            box-shadow: none;
+        }
+
+        .btn-outline::before {
+            background: white;
+        }
+
+        .btn-outline:hover {
+            color: var(--primary);
+        }
+
+        /* Footer - Same as other pages */
+        footer {
+            background-color: var(--primary);
+            color: white;
+            padding: 70px 0 25px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 Z" fill="rgba(15,155,142,0.05)"/></svg>');
+            background-size: cover;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 50px;
+            margin-bottom: 50px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .footer-column h3 {
+            font-size: 1.6rem;
+            margin-bottom: 25px;
+            color: var(--accent-light);
+            font-weight: 600;
+        }
+
+        .footer-column p {
+            color: #ccc;
+            margin-bottom: 20px;
+            line-height: 1.7;
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 15px;
+        }
+
+        .footer-column ul li a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .footer-column ul li a:hover {
+            color: var(--accent-light);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 25px;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            background-color: rgba(255, 255, 255, 0.08);
+            border-radius: 50%;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s;
+            font-size: 1.1rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .social-links a:hover {
+            background-color: var(--accent-light);
+            transform: translateY(-5px) scale(1.1);
+            border-color: var(--accent-light);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #aaa;
+            font-size: 0.9rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Explore Button Container */
+        .explore-button-container {
+            text-align: center;
+            margin-top: 40px;
+            width: 100%;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1100px) {
+            .services-hero h1 {
+                font-size: 3rem;
+            }
+            
+            .pricing-card.featured {
+                transform: none;
+            }
+            
+            .pricing-card.featured:hover {
+                transform: translateY(-15px);
+            }
+        }
+
+        @media (max-width: 992px) {
+            .services-hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .service-category {
+                padding: 40px 30px;
+            }
+            
+            .service-category-header {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .service-category-icon {
+                margin-right: 0;
+                margin-bottom: 20px;
+            }
+            
+            .pricing-grid {
+                grid-template-columns: 1fr;
+                max-width: 500px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            
+            .pricing-card.featured {
+                transform: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding-top: 70px;
+            }
+            
+            header {
+                padding: 15px 0;
+            }
+            
+            .nav-links {
+                display: none;
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background-color: var(--primary);
+                flex-direction: column;
+                padding: 100px 30px 30px;
+                text-align: center;
+                gap: 20px;
+                z-index: 999;
+                overflow-y: auto;
+            }
+            
+            .nav-links.active {
+                display: flex;
+            }
+            
+            .nav-links li {
+                width: 100%;
+            }
+            
+            .nav-links a {
+                display: block;
+                width: 100%;
+                padding: 15px;
+                font-size: 1.2rem;
+                border-radius: 8px;
+                background: rgba(255, 255, 255, 0.05);
+            }
+            
+            .mobile-menu {
+                display: block;
+            }
+            
+            .logo {
+                font-size: 1.6rem;
+            }
+            
+            .services-hero {
+                padding: 80px 0 50px;
+                background-attachment: scroll;
+            }
+            
+            .services-hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .services-hero p {
+                font-size: 1.1rem;
+            }
+            
+            .section-title {
+                font-size: 2.2rem;
+            }
+            
+            .service-category {
+                padding: 30px 20px;
+            }
+            
+            .service-items {
+                grid-template-columns: 1fr;
+            }
+            
+            .tools-grid,
+            .process-steps {
+                grid-template-columns: 1fr;
+            }
+            
+            .pricing-card {
+                padding: 40px 30px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .services-hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .section-title,
+            .service-category-header h3,
+            .services-cta-content h3 {
+                font-size: 2rem;
+            }
+            
+            .service-card {
+                padding: 35px 25px;
+            }
+            
+            .service-category-header h3 {
+                font-size: 1.8rem;
+            }
+            
+            .nav-links {
+                gap: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header id="header">
+        <div class="container">
+            <nav>
+                <a href="index.html" class="logo">Rabiu<span>Sani</span></a>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="services.html" class="active">Services</a></li>
+                    <li><a href="skills.html">Tech Stacks</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <button class="mobile-menu" id="mobileMenuBtn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Services Hero Section -->
+    <section class="services-hero">
+        <div class="container">
+            <div class="services-hero-content">
+                <h1>Professional <span class="highlight">Design Services</span> & Tools</h1>
+                <p>Comprehensive brand design solutions powered by industry-leading tools and technologies. I create strategic visual identities that communicate your brand's unique value and drive business growth.</p>
+                <div class="cta-buttons">
+                    <a href="#services" class="btn"><i class="fas fa-concierge-bell"></i> Explore Services</a>
+                    <a href="contact.html" class="btn btn-outline"><i class="fas fa-calendar-check"></i> Book Consultation</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Overview -->
+    <section class="services-overview" id="services">
+        <div class="container">
+            <h2 class="section-title">My Design Services</h2>
+            <p style="text-align: center; max-width: 800px; margin: 0 auto 50px; color: #555; font-size: 1.1rem; line-height: 1.8;">
+                As a Full Brand Designer, I offer comprehensive design solutions that cover every aspect of your visual identity. From initial concept to final implementation, I ensure cohesive and impactful brand experiences.
+            </p>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <i class="fas fa-palette"></i>
+                    <h3>Brand Identity Design</h3>
+                    <p>Complete visual identity systems that establish a strong, memorable brand presence across all touchpoints.</p>
+                    <ul class="service-features">
+                        <li>Logo Design & Variations</li>
+                        <li>Color Palette Development</li>
+                        <li>Typography Systems</li>
+                        <li>Brand Guidelines</li>
+                        <li>Visual Language Development</li>
+                    </ul>
+                </div>
+                
+                <div class="service-card">
+                    <i class="fas fa-laptop"></i>
+                    <h3>UI/UX Design</h3>
+                    <p>User-centered digital experiences that are intuitive, engaging, and conversion-focused.</p>
+                    <ul class="service-features">
+                        <li>Website Design & Development</li>
+                        <li>Mobile App UI/UX</li>
+                        <li>User Research & Testing</li>
+                        <li>Wireframing & Prototyping</li>
+                        <li>Interaction Design</li>
+                    </ul>
+                </div>
+                
+                <div class="service-card">
+                    <i class="fas fa-print"></i>
+                    <h3>Print & Packaging</h3>
+                    <p>Tangible design solutions that create physical connections with your audience.</p>
+                    <ul class="service-features">
+                        <li>Business Stationery Design</li>
+                        <li>Product Packaging</li>
+                        <li>Marketing Collateral</li>
+                        <li>Brochures & Catalogs</li>
+                        <li>Signage & Environmental Graphics</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Detailed Services -->
+    <section class="detailed-services">
+        <div class="container">
+            <h2 class="section-title">Detailed Service Offerings</h2>
+            
+            <div class="service-category">
+                <div class="service-category-header">
+                    <div class="service-category-icon">
+                        <i class="fas fa-layer-group"></i>
+                    </div>
+                    <h3>Comprehensive Brand Systems</h3>
+                </div>
+                
+                <div class="service-items">
+                    <div class="service-item">
+                        <h4>Complete Brand Identity</h4>
+                        <p>Full visual identity system including logo, color palette, typography, and brand guidelines.</p>
+                        <div class="service-price">Starting at ₦250,000</div>
+                    </div>
+                    
+                    <div class="service-item">
+                        <h4>Logo Design & Development</h4>
+                        <p>Professional logo creation with multiple concepts and final files in all formats.</p>
+                        <div class="service-price">Starting at ₦80,000</div>
+                    </div>
+                    
+                    <div class="service-item">
+                        <h4>Brand Guidelines Document</h4>
+                        <p>Comprehensive brand manual detailing logo usage, colors, typography, and applications.</p>
+                        <div class="service-price">Starting at ₦120,000</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="service-category">
+                <div class="service-category-header">
+                    <div class="service-category-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3>Digital Design & Development</h3>
+                </div>
+                
+                <div class="service-items">
+                    <div class="service-item">
+                        <h4>Website Design & Development</h4>
+                        <p>Custom website design with responsive development and CMS integration.</p>
+                        <div class="service-price">Starting at ₦350,000</div>
+                    </div>
+                    
+                    <div class="service-item">
+                        <h4>Mobile App UI/UX Design</h4>
+                        <p>User interface and experience design for iOS and Android applications.</p>
+                        <div class="service-price">Starting at ₦300,000</div>
+                    </div>
+                    
+                    <div class="service-item">
+                        <h4>E-commerce Design</h4>
+                        <p>Online store design with product catalog, shopping cart, and checkout optimization.</p>
+                        <div class="service-price">Starting at ₦400,000</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="service-category">
+                <div class="service-category-header">
+                    <div class="service-category-icon">
+                        <i class="fas fa-bullhorn"></i>
+                    </div>
+                    <h3>Marketing & Advertising Design</h3>
+                </div>
+                
+                <div class="service-items">
+                    <div class="service-item">
+                        <h4>Social Media Graphics Package</h4>
+                        <p>Complete set of social media templates, banners, and content graphics.</p>
+                        <div class="service-price">Starting at ₦75,000</div>
+                    </div>
+                    
+                    <div class="service-item">
+                        <h4>Digital Advertising Design</h4>
+                        <p>Eye-catching banner ads, Google Ads graphics, and social media advertisements.</p>
+                        <div class="service-price">Starting at ₦60,000</div>
+                    </div>
+                    
+                    <div class="service-item">
+                        <h4>Email Marketing Templates</h4>
+                        <p>Responsive email designs that work across all devices and email clients.</p>
+                        <div class="service-price">Starting at ₦50,000</div>
+                    </div>
+                </div>
+                
+                <div class="explore-button-container">
+                    <a href="skills.html" class="btn"><i class="fas fa-code"></i> Explore Technology Stacks I Used</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+   
+    <!-- Work Process -->
+    <section class="work-process">
+        <div class="container">
+            <h2 class="section-title">My Design Process</h2>
+            <p style="text-align: center; max-width: 800px; margin: 0 auto 50px; color: #555; font-size: 1.1rem; line-height: 1.8;">
+                Every successful project follows a structured process that ensures clarity, collaboration, and exceptional results. Here's how we'll work together to bring your vision to life.
+            </p>
+            
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="step-number">01</div>
+                    <h3>Discovery & Research</h3>
+                    <p>We start with in-depth research to understand your business, audience, and market landscape. This phase includes competitor analysis and goal definition.</p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">02</div>
+                    <h3>Strategy & Planning</h3>
+                    <p>Based on research findings, we develop a strategic design plan with clear objectives, timelines, and success metrics for your project.</p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">03</div>
+                    <h3>Design & Creation</h3>
+                    <p>This is where ideas become visuals. I create design concepts, mockups, and prototypes that bring your brand strategy to life.</p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">04</div>
+                    <h3>Refinement & Delivery</h3>
+                    <p>We refine designs based on your feedback, prepare final deliverables, and ensure everything is production-ready for implementation.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Packages -->
+    <section class="pricing">
+        <div class="container">
+            <h2 class="section-title">Design Packages</h2>
+            <p style="text-align: center; max-width: 800px; margin: 0 auto 50px; color: #555; font-size: 1.1rem; line-height: 1.8;">
+                Flexible design packages tailored to different business needs. All packages include professional design consultation and project management.
+            </p>
+            
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3>Starter Package</h3>
+                        <div class="pricing-price">₦150,000</div>
+                        <div class="pricing-period">One-time project fee</div>
+                    </div>
+                    
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check"></i> Logo Design (2 concepts)</li>
+                        <li><i class="fas fa-check"></i> Basic Brand Guidelines</li>
+                        <li><i class="fas fa-check"></i> Business Card Design</li>
+                        <li><i class="fas fa-check"></i> Social Media Kit (5 graphics)</li>
+                        <li><i class="fas fa-check"></i> 2 Rounds of Revisions</li>
+                        <li class="disabled"><i class="fas fa-times"></i> Website Design</li>
+                        <li class="disabled"><i class="fas fa-times"></i> Packaging Design</li>
+                    </ul>
+                    
+                    <a href="contact.html" class="btn">Choose Starter</a>
+                </div>
+                
+                <div class="pricing-card featured">
+                    <div class="pricing-badge">Most Popular</div>
+                    <div class="pricing-header">
+                        <h3>Professional Package</h3>
+                        <div class="pricing-price">₦350,000</div>
+                        <div class="pricing-period">Complete brand system</div>
+                    </div>
+                    
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check"></i> Complete Brand Identity</li>
+                        <li><i class="fas fa-check"></i> Logo + Submarks + Variations</li>
+                        <li><i class="fas fa-check"></i> Comprehensive Brand Guidelines</li>
+                        <li><i class="fas fa-check"></i> Business Stationery Set</li>
+                        <li><i class="fas fa-check"></i> Social Media Kit (15 graphics)</li>
+                        <li><i class="fas fa-check"></i> 5 Rounds of Revisions</li>
+                        <li><i class="fas fa-check"></i> Basic Website Design</li>
+                    </ul>
+                    
+                    <a href="contact.html" class="btn">Choose Professional</a>
+                </div>
+                
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3>Enterprise Package</h3>
+                        <div class="pricing-price">₦650,000+</div>
+                        <div class="pricing-period">Custom project-based pricing</div>
+                    </div>
+                    
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check"></i> Everything in Professional</li>
+                        <li><i class="fas fa-check"></i> Custom Website Development</li>
+                        <li><i class="fas fa-check"></i> Product Packaging Design</li>
+                        <li><i class="fas fa-check"></i> Marketing Campaign Design</li>
+                        <li><i class="fas fa-check"></i> Unlimited Revisions</li>
+                        <li><i class="fas fa-check"></i> 3 Months Support</li>
+                        <li><i class="fas fa-check"></i> Brand Training Session</li>
+                    </ul>
+                    
+                    <a href="contact.html" class="btn">Contact for Quote</a>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 50px;">
+                <p style="color: #666; font-size: 1rem;">Need a custom solution? <a href="contact.html" style="color: var(--accent); font-weight: 600;">Contact me</a> for a personalized quote based on your specific requirements.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services CTA -->
+    <section class="services-cta">
+        <div class="container">
+            <div class="services-cta-content">
+                <h3>Ready to Transform Your Brand?</h3>
+                <p>Let's collaborate to create a powerful visual identity that communicates your unique value, connects with your audience, and drives business growth. Schedule a free design consultation today.</p>
+                <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
+                    <a href="portfolio.html" class="btn"><i class="fas fa-eye"></i> View My Work</a>
+                    <a href="contact.html" class="btn btn-outline"><i class="fas fa-calendar-check"></i> Book Free Consultation</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Rabiu Sani Muhammad</h3>
+                    <p>Professional Full Brand Designer specializing in comprehensive visual identity systems, UI/UX design, and strategic brand development for businesses of all sizes.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-behance"></i></a>
+                        <a href="#"><i class="fab fa-dribbble"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
+                        <li><a href="about.html"><i class="fas fa-chevron-right"></i> About Me</a></li>
+                        <li><a href="portfolio.html"><i class="fas fa-chevron-right"></i> Portfolio</a></li>
+                        <li><a href="services.html"><i class="fas fa-chevron-right"></i> Services</a></li>
+                        <li><a href="skills.html"><i class="fas fa-chevron-right"></i> Tech Stacks</a></li>
+                        <li><a href="contact.html"><i class="fas fa-chevron-right"></i> Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Info</h3>
+                    <ul>
+                        <li><a href="mailto:aljauromanee@gmail.com"><i class="fas fa-envelope"></i> aljauromanee@gmail.com</a></li>
+                        <li><a href="tel:+2349123234431"><i class="fas fa-phone-alt"></i> +234 91 23234431</a></li>
+                        <li><a href="#"><i class="fas fa-map-marker-alt"></i> FCT, Abuja, Nigeria</a></li>
+                        <li><a href="#"><i class="fas fa-globe"></i> Available for International Projects</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2026 Rabiu Sani Muhammad (Aljauromanee). All Rights Reserved. | Professional Brand Design Portfolio</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navLinks = document.querySelector('.nav-links');
+        const menuIcon = mobileMenuBtn.querySelector('i');
+        
+        mobileMenuBtn.addEventListener('click', function() {
+            navLinks.classList.toggle('active');
+            
+            // Toggle menu icon
+            if (navLinks.classList.contains('active')) {
+                menuIcon.classList.remove('fa-bars');
+                menuIcon.classList.add('fa-times');
+                document.body.style.overflow = 'hidden';
+            } else {
+                menuIcon.classList.remove('fa-times');
+                menuIcon.classList.add('fa-bars');
+                document.body.style.overflow = 'auto';
+            }
+        });
+
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                menuIcon.classList.remove('fa-times');
+                menuIcon.classList.add('fa-bars');
+                document.body.style.overflow = 'auto';
+                
+                // Update active class
+                document.querySelectorAll('.nav-links a').forEach(a => {
+                    a.classList.remove('active');
+                });
+                link.classList.add('active');
+            });
+        });
+
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.getElementById('header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                
+                // Only prevent default for on-page anchor links
+                if (href.startsWith('#') && href.length > 1) {
+                    e.preventDefault();
+                    
+                    const targetElement = document.querySelector(href);
+                    if(targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                }
+            });
+        });
+
+        // Add animation to elements on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Animate elements
+        document.addEventListener('DOMContentLoaded', function() {
+            // Animate service cards
+            const serviceCards = document.querySelectorAll('.service-card');
+            serviceCards.forEach((card, index) => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(30px)';
+                card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                setTimeout(() => {
+                    observer.observe(card);
+                }, index * 150);
+            });
+
+            // Animate service items
+            const serviceItems = document.querySelectorAll('.service-item');
+            serviceItems.forEach((item, index) => {
+                item.style.opacity = '0';
+                item.style.transform = 'translateY(20px)';
+                item.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                setTimeout(() => {
+                    observer.observe(item);
+                }, index * 100);
+            });
+
+            // Animate tool cards
+            const toolCards = document.querySelectorAll('.tool-card');
+            toolCards.forEach((card, index) => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(30px)';
+                card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                setTimeout(() => {
+                    observer.observe(card);
+                }, index * 150);
+            });
+
+            // Animate process steps
+            const processSteps = document.querySelectorAll('.process-step');
+            processSteps.forEach((step, index) => {
+                step.style.opacity = '0';
+                step.style.transform = 'translateY(30px)';
+                step.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                setTimeout(() => {
+                    observer.observe(step);
+                }, index * 200);
+            });
+
+            // Animate pricing cards
+            const pricingCards = document.querySelectorAll('.pricing-card');
+            pricingCards.forEach((card, index) => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(30px)';
+                card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                setTimeout(() => {
+                    observer.observe(card);
+                }, index * 200);
+            });
+        });
+
+        // Initialize with header scroll check
+        window.dispatchEvent(new Event('scroll'));
+    </script>
+</body>
+</html>
