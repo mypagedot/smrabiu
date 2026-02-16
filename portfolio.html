@@ -34,8 +34,6 @@
             --light: #f8f9fa;
             --gray: #6c757d;
             --dark: #212529;
-            --success: #28a745;
-            --warning: #ffc107;
         }
 
         body {
@@ -52,7 +50,7 @@
             padding: 0 20px;
         }
 
-        /* Header & Navigation - Same as other pages */
+        /* ===== HEADER & NAVIGATION (aligned with about page) ===== */
         header {
             background-color: rgba(26, 26, 46, 0.95);
             color: white;
@@ -70,7 +68,6 @@
         header.scrolled {
             padding: 12px 0;
             background-color: rgba(26, 26, 46, 0.98);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
         }
 
         nav {
@@ -96,7 +93,7 @@
         .nav-links {
             display: flex;
             list-style: none;
-            gap: 35px;
+            gap: 25px;
             align-items: center;
         }
 
@@ -105,7 +102,7 @@
             text-decoration: none;
             font-weight: 500;
             transition: all 0.3s;
-            padding: 8px 16px;
+            padding: 8px 12px;
             border-radius: 4px;
             font-size: 1rem;
             position: relative;
@@ -125,7 +122,7 @@
 
         .nav-links a:hover::after,
         .nav-links a.active::after {
-            width: 80%;
+            width: 70%;
         }
 
         .nav-links a:hover {
@@ -134,6 +131,28 @@
 
         .nav-links a.active {
             color: var(--accent-light);
+        }
+
+        /* nav-cta button (from about page) */
+        .nav-links .nav-cta {
+            background: linear-gradient(135deg, var(--accent) 0%, var(--accent-light) 100%);
+            border-radius: 30px;
+            padding: 8px 22px !important;
+            color: white;
+            font-weight: 600;
+            border: none;
+            box-shadow: 0 4px 12px rgba(15, 155, 142, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .nav-links .nav-cta::after {
+            display: none;
+        }
+
+        .nav-links .nav-cta:hover {
+            background: linear-gradient(135deg, var(--accent-light) 0%, var(--accent) 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 18px rgba(15, 155, 142, 0.5);
         }
 
         .mobile-menu {
@@ -147,7 +166,7 @@
             z-index: 1001;
         }
 
-        /* Portfolio Hero Section */
+        /* ===== PORTFOLIO HERO ===== */
         .portfolio-hero {
             background: linear-gradient(135deg, rgba(26, 26, 46, 0.92) 0%, rgba(22, 33, 62, 0.88) 100%), url('images/hero-bg-img.jpg');
             background-size: cover;
@@ -217,7 +236,71 @@
             line-height: 1.7;
         }
 
-        /* Portfolio Filter */
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 16px 36px;
+            background: linear-gradient(135deg, var(--accent) 0%, var(--accent-light) 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            box-shadow: 0 4px 15px rgba(15, 155, 142, 0.3);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 100%;
+            background: linear-gradient(135deg, var(--accent-light) 0%, var(--accent) 100%);
+            transition: width 0.5s ease;
+            z-index: -1;
+        }
+
+        .btn:hover::before {
+            width: 100%;
+        }
+
+        .btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(15, 155, 142, 0.4);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid white;
+            color: white;
+            box-shadow: none;
+        }
+
+        .btn-outline::before {
+            background: white;
+        }
+
+        .btn-outline:hover {
+            color: var(--primary);
+        }
+
+        /* ===== PORTFOLIO FILTER ===== */
         .portfolio-filter {
             display: flex;
             justify-content: center;
@@ -247,7 +330,7 @@
             box-shadow: 0 5px 15px rgba(15, 155, 142, 0.3);
         }
 
-        /* Portfolio Grid */
+        /* ===== PORTFOLIO GRID ===== */
         .portfolio-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
@@ -393,7 +476,7 @@
             transform: translateY(-2px);
         }
 
-        /* Featured Case Study */
+        /* ===== FEATURED CASE STUDY ===== */
         .featured-case {
             background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
             color: white;
@@ -492,7 +575,7 @@
             display: block;
         }
 
-        /* Client Testimonials */
+        /* ===== TESTIMONIALS ===== */
         .testimonials {
             margin-bottom: 100px;
         }
@@ -626,7 +709,7 @@
             transform: translateY(-3px);
         }
 
-        /* Process Section */
+        /* ===== PROCESS ===== */
         .process {
             margin-bottom: 100px;
         }
@@ -680,7 +763,7 @@
             line-height: 1.7;
         }
 
-        /* Portfolio CTA */
+        /* ===== PORTFOLIO CTA ===== */
         .portfolio-cta {
             background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
             color: white;
@@ -725,65 +808,7 @@
             line-height: 1.7;
         }
 
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            padding: 16px 36px;
-            background: linear-gradient(135deg, var(--accent) 0%, var(--accent-light) 100%);
-            color: white;
-            text-decoration: none;
-            border-radius: 8px;
-            font-weight: 600;
-            transition: all 0.3s;
-            border: none;
-            cursor: pointer;
-            text-align: center;
-            font-size: 1rem;
-            box-shadow: 0 4px 15px rgba(15, 155, 142, 0.3);
-            position: relative;
-            overflow: hidden;
-            z-index: 1;
-        }
-
-        .btn::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 0;
-            height: 100%;
-            background: linear-gradient(135deg, var(--accent-light) 0%, var(--accent) 100%);
-            transition: width 0.5s ease;
-            z-index: -1;
-        }
-
-        .btn:hover::before {
-            width: 100%;
-        }
-
-        .btn:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(15, 155, 142, 0.4);
-        }
-
-        .btn-outline {
-            background: transparent;
-            border: 2px solid white;
-            color: white;
-            box-shadow: none;
-        }
-
-        .btn-outline::before {
-            background: white;
-        }
-
-        .btn-outline:hover {
-            color: var(--primary);
-        }
-
-        /* Footer - Same as other pages */
+        /* ===== FOOTER ===== */
         footer {
             background-color: var(--primary);
             color: white;
@@ -883,173 +908,95 @@
             z-index: 1;
         }
 
-        /* Responsive Design */
+        /* ===== RESPONSIVE ===== */
         @media (max-width: 1100px) {
-            .portfolio-hero h1 {
-                font-size: 3rem;
-            }
-            
-            .case-content {
-                gap: 50px;
-            }
+            .portfolio-hero h1 { font-size: 3rem; }
+            .case-content { gap: 50px; }
         }
 
         @media (max-width: 992px) {
-            .case-content {
-                grid-template-columns: 1fr;
-                gap: 40px;
-            }
-            
-            .portfolio-hero h1 {
-                font-size: 2.5rem;
-            }
-            
-            .case-image {
-                order: -1;
-            }
-            
-            .portfolio-grid {
-                grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-                gap: 30px;
-            }
+            .nav-links { gap: 15px; }
+            .nav-links a { font-size: 0.95rem; padding: 8px 8px; }
+            .nav-links .nav-cta { padding: 8px 16px !important; }
+
+            .case-content { grid-template-columns: 1fr; gap: 40px; }
+            .portfolio-hero h1 { font-size: 2.5rem; }
+            .case-image { order: -1; }
+            .portfolio-grid { grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 30px; }
         }
 
         @media (max-width: 768px) {
-            body {
-                padding-top: 70px;
-            }
-            
-            header {
-                padding: 15px 0;
-            }
-            
+            body { padding-top: 70px; }
+            header { padding: 15px 0; }
+
             .nav-links {
                 display: none;
-                position: fixed;
-                top: 0;
+                position: absolute;
+                top: 100%;
                 left: 0;
-                right: 0;
-                bottom: 0;
+                width: 100%;
                 background-color: var(--primary);
                 flex-direction: column;
-                padding: 100px 30px 30px;
+                padding: 20px;
+                gap: 15px;
                 text-align: center;
-                gap: 20px;
-                z-index: 999;
-                overflow-y: auto;
+                box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+                z-index: 998;
             }
-            
-            .nav-links.active {
-                display: flex;
-            }
-            
-            .nav-links li {
-                width: 100%;
-            }
-            
+
+            .nav-links.active { display: flex; }
+            .nav-links li { width: 100%; }
             .nav-links a {
                 display: block;
                 width: 100%;
-                padding: 15px;
-                font-size: 1.2rem;
-                border-radius: 8px;
+                padding: 12px;
+                font-size: 1.1rem;
+                border-radius: 6px;
                 background: rgba(255, 255, 255, 0.05);
             }
-            
-            .mobile-menu {
-                display: block;
+            .nav-links .nav-cta {
+                background: linear-gradient(135deg, var(--accent) 0%, var(--accent-light) 100%);
+                padding: 12px !important;
+                border-radius: 6px;
             }
-            
-            .logo {
-                font-size: 1.6rem;
-            }
-            
-            .portfolio-hero {
-                padding: 80px 0 50px;
-                background-attachment: scroll;
-            }
-            
-            .portfolio-hero h1 {
-                font-size: 2.2rem;
-            }
-            
-            .portfolio-hero p {
-                font-size: 1.1rem;
-            }
-            
-            .section-title {
-                font-size: 2.2rem;
-            }
-            
-            .portfolio-grid {
-                grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            }
-            
-            .portfolio-img {
-                height: 240px;
-            }
-            
-            .testimonial {
-                padding: 30px;
-            }
-            
-            .process-steps {
-                grid-template-columns: 1fr;
-            }
+            .mobile-menu { display: block; }
+            .logo { font-size: 1.6rem; }
+
+            .portfolio-hero { padding: 80px 0 50px; background-attachment: scroll; }
+            .portfolio-hero h1 { font-size: 2.2rem; }
+            .portfolio-hero p { font-size: 1.1rem; }
+            .section-title { font-size: 2.2rem; }
+            .portfolio-grid { grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); }
+            .portfolio-img { height: 240px; }
+            .testimonial { padding: 30px; }
+            .process-steps { grid-template-columns: 1fr; }
         }
 
         @media (max-width: 576px) {
-            .portfolio-hero h1 {
-                font-size: 1.8rem;
-            }
-            
-            .section-title,
-            .case-text h2,
-            .portfolio-cta-content h3 {
-                font-size: 2rem;
-            }
-            
-            .portfolio-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .portfolio-actions {
-                flex-direction: column;
-            }
-            
-            .case-stats {
-                grid-template-columns: 1fr;
-            }
-            
-            .portfolio-filter {
-                gap: 10px;
-            }
-            
-            .filter-btn {
-                padding: 10px 20px;
-                font-size: 0.9rem;
-            }
-            
-            .client-info {
-                flex-direction: column;
-                text-align: center;
-            }
+            .portfolio-hero h1 { font-size: 1.8rem; }
+            .section-title, .case-text h2, .portfolio-cta-content h3 { font-size: 2rem; }
+            .portfolio-grid { grid-template-columns: 1fr; }
+            .portfolio-actions { flex-direction: column; }
+            .case-stats { grid-template-columns: 1fr; }
+            .portfolio-filter { gap: 10px; }
+            .filter-btn { padding: 10px 20px; font-size: 0.9rem; }
+            .client-info { flex-direction: column; text-align: center; }
         }
     </style>
 </head>
 <body>
-    <!-- Header & Navigation -->
+    <!-- Header & Navigation (updated to match about page) -->
     <header id="header">
         <div class="container">
             <nav>
-                <a href="index.html" class="logo">Rabiu<span>Sani</span></a>
+                <a href="index.html" class="logo">Rabiu<span>SM</span></a>
                 <ul class="nav-links">
-                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="index.html">Home</a></li>
                     <li><a href="about.html">About</a></li>
-                    <li><a href="portfolio.html">Portfolio</a></li>
-                    <li><a href="skills.html">Tech Stacks</a></li>
+                    <li><a href="portfolio.html" class="active">Portfolio</a></li>
                     <li><a href="services.html">Services</a></li>
-                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="skills.html">Skills</a></li>
+                    <li><a href="contact.html" class="nav-cta">Let's Talk</a></li>
                 </ul>
                 <button class="mobile-menu" id="mobileMenuBtn">
                     <i class="fas fa-bars"></i>
@@ -1150,7 +1097,7 @@
                     <p>Complete corporate identity package including business cards, letterheads, envelopes, and presentation folders for a multinational consulting firm.</p>
                     
                     <div class="portfolio-stats">
-                        <div class="stat"><i class="fas fa-calendar"></i> 0 Months</div>
+                        <div class="stat"><i class="fas fa-calendar"></i> 2 Months</div>
                         <div class="stat"><i class="fas fa-file-alt"></i> 8+ Items</div>
                         <div class="stat"><i class="fas fa-chart-line"></i> Professional Image</div>
                     </div>
@@ -1171,11 +1118,11 @@
                     </div>
                 </div>
                 <div class="portfolio-info">
-                    <h3>E-commerce Fashion and Design Platform</h3>
+                    <h3>E-commerce Fashion Platform</h3>
                     <p>Complete website design and user experience for a fashion e-commerce platform, focusing on conversion optimization and mobile responsiveness.</p>
                     
                     <div class="portfolio-stats">
-                        <div class="stat"><i class="fas fa-calendar"></i> 5 hours</div>
+                        <div class="stat"><i class="fas fa-calendar"></i> 5 weeks</div>
                         <div class="stat"><i class="fas fa-shopping-cart"></i> 60+ Product Pages</div>
                         <div class="stat"><i class="fas fa-chart-line"></i> +28% Conversion Rate</div>
                     </div>
@@ -1283,23 +1230,9 @@
             <h2 class="section-title">Client Testimonials</h2>
             
             <div class="testimonial-slider">
-                <div class="testimonial">
-                    <div class="testimonial-content">
-                        Rabiu transformed our brand from a local business to a nationally recognized name. His strategic approach to design not only improved our visual identity but also our market position. The results exceeded our expectations.
-                    </div>
-                    
-                    <div class="client-info">
-                        <div class="client-avatar">
-                            <img src="images/Pi tech.jpeg" alt="Sarah Johnson">
-                        </div>
-                        <div class="client-details">
-                            <h4>Prince</h4>
-                            <p>CEO, Pi technology</p>
-                        </div>
-                    </div>
+                <div class="testimonial" id="testimonialContainer">
+                    <!-- dynamically filled by JS -->
                 </div>
-                
-                <!-- Additional testimonials would be added here for slider functionality -->
             </div>
             
             <div class="testimonial-nav">
@@ -1378,13 +1311,14 @@
                         <li><a href="about.html"><i class="fas fa-chevron-right"></i> About Me</a></li>
                         <li><a href="portfolio.html"><i class="fas fa-chevron-right"></i> Portfolio</a></li>
                         <li><a href="services.html"><i class="fas fa-chevron-right"></i> Services</a></li>
+                        <li><a href="skills.html"><i class="fas fa-chevron-right"></i> Skills</a></li>
                         <li><a href="contact.html"><i class="fas fa-chevron-right"></i> Contact</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
                     <h3>Contact Info</h3>
                     <ul>
-                        <li><a href="mailto:contact@aljauromanee.com"><i class="fas fa-envelope"></i> contact@aljauromanee.com</a></li>
+                        <li><a href="mailto:aljauromanee@gmail.com"><i class="fas fa-envelope"></i> aljauromanee@gmail.com</a></li>
                         <li><a href="tel:+2347068766833"><i class="fas fa-phone-alt"></i> +234 706 876 6833</a></li>
                         <li><a href="#"><i class="fas fa-map-marker-alt"></i> FCT, Abuja, Nigeria</a></li>
                         <li><a href="#"><i class="fas fa-globe"></i> Available for International Projects</a></li>
@@ -1405,8 +1339,6 @@
         
         mobileMenuBtn.addEventListener('click', function() {
             navLinks.classList.toggle('active');
-            
-            // Toggle menu icon
             if (navLinks.classList.contains('active')) {
                 menuIcon.classList.remove('fa-bars');
                 menuIcon.classList.add('fa-times');
@@ -1425,32 +1357,19 @@
                 menuIcon.classList.remove('fa-times');
                 menuIcon.classList.add('fa-bars');
                 document.body.style.overflow = 'auto';
-                
-                // Update active class
-                document.querySelectorAll('.nav-links a').forEach(a => {
-                    a.classList.remove('active');
-                });
-                link.classList.add('active');
             });
         });
 
         // Header scroll effect
         window.addEventListener('scroll', function() {
-            const header = document.getElementById('header');
-            if (window.scrollY > 50) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
+            document.getElementById('header').classList.toggle('scrolled', window.scrollY > 50);
         });
 
         // Portfolio Filtering
         document.querySelectorAll('.filter-btn').forEach(button => {
             button.addEventListener('click', function() {
                 // Update active button
-                document.querySelectorAll('.filter-btn').forEach(btn => {
-                    btn.classList.remove('active');
-                });
+                document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
                 this.classList.add('active');
                 
                 // Filter portfolio items
@@ -1498,24 +1417,21 @@
         ];
 
         let currentTestimonial = 0;
-        const testimonialElement = document.querySelector('.testimonial');
+        const testimonialContainer = document.getElementById('testimonialContainer');
         const prevBtn = document.querySelector('.prev-btn');
         const nextBtn = document.querySelector('.next-btn');
 
         function updateTestimonial(index) {
-            const testimonial = testimonials[index];
-            testimonialElement.innerHTML = `
-                <div class="testimonial-content">
-                    ${testimonial.content}
-                </div>
-                
+            const t = testimonials[index];
+            testimonialContainer.innerHTML = `
+                <div class="testimonial-content">${t.content}</div>
                 <div class="client-info">
                     <div class="client-avatar">
-                        <img src="${testimonial.avatar}" alt="${testimonial.name}">
+                        <img src="${t.avatar}" alt="${t.name}">
                     </div>
                     <div class="client-details">
-                        <h4>${testimonial.name}</h4>
-                        <p>${testimonial.role}</p>
+                        <h4>${t.name}</h4>
+                        <p>${t.role}</p>
                     </div>
                 </div>
             `;
@@ -1534,32 +1450,22 @@
         // Initialize testimonial
         updateTestimonial(currentTestimonial);
 
-        // Smooth scrolling for navigation links
+        // Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 const href = this.getAttribute('href');
-                
-                // Only prevent default for on-page anchor links
                 if (href.startsWith('#') && href.length > 1) {
                     e.preventDefault();
-                    
-                    const targetElement = document.querySelector(href);
-                    if(targetElement) {
-                        window.scrollTo({
-                            top: targetElement.offsetTop - 80,
-                            behavior: 'smooth'
-                        });
+                    const target = document.querySelector(href);
+                    if (target) {
+                        window.scrollTo({ top: target.offsetTop - 80, behavior: 'smooth' });
                     }
                 }
             });
         });
 
-        // Add animation to elements on scroll
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
+        // Intersection Observer for animations
+        const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' };
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -1569,50 +1475,31 @@
             });
         }, observerOptions);
 
-        // Animate portfolio items
         document.addEventListener('DOMContentLoaded', function() {
             // Animate portfolio items
-            const portfolioItems = document.querySelectorAll('.portfolio-item');
-            portfolioItems.forEach((item, index) => {
+            document.querySelectorAll('.portfolio-item').forEach((item, index) => {
                 item.style.opacity = '0';
                 item.style.transform = 'translateY(30px)';
                 item.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-                setTimeout(() => {
-                    observer.observe(item);
-                }, index * 150);
+                setTimeout(() => observer.observe(item), index * 150);
             });
 
             // Animate process steps
-            const processSteps = document.querySelectorAll('.process-step');
-            processSteps.forEach((step, index) => {
+            document.querySelectorAll('.process-step').forEach((step, index) => {
                 step.style.opacity = '0';
                 step.style.transform = 'translateY(30px)';
                 step.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-                setTimeout(() => {
-                    observer.observe(step);
-                }, index * 200);
+                setTimeout(() => observer.observe(step), index * 200);
             });
 
             // Animate case study
             const caseText = document.querySelector('.case-text');
             const caseImage = document.querySelector('.case-image');
-            
-            if (caseText) {
-                caseText.style.opacity = '0';
-                caseText.style.transform = 'translateX(-30px)';
-                caseText.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
-                observer.observe(caseText);
-            }
-            
-            if (caseImage) {
-                caseImage.style.opacity = '0';
-                caseImage.style.transform = 'translateX(30px)';
-                caseImage.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
-                observer.observe(caseImage);
-            }
+            if (caseText) { caseText.style.opacity = '0'; caseText.style.transform = 'translateX(-30px)'; caseText.style.transition = 'opacity 0.8s ease, transform 0.8s ease'; observer.observe(caseText); }
+            if (caseImage) { caseImage.style.opacity = '0'; caseImage.style.transform = 'translateX(30px)'; caseImage.style.transition = 'opacity 0.8s ease, transform 0.8s ease'; observer.observe(caseImage); }
         });
 
-        // Initialize with header scroll check
+        // Initial header check
         window.dispatchEvent(new Event('scroll'));
     </script>
 </body>
