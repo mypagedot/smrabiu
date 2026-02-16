@@ -52,7 +52,7 @@
             padding: 0 20px;
         }
 
-        /* Header & Navigation - Same as other pages */
+        /* ===== HEADER & NAVIGATION (aligned with about page) ===== */
         header {
             background-color: rgba(26, 26, 46, 0.95);
             color: white;
@@ -96,7 +96,7 @@
         .nav-links {
             display: flex;
             list-style: none;
-            gap: 30px;
+            gap: 25px;
             align-items: center;
         }
 
@@ -125,7 +125,7 @@
 
         .nav-links a:hover::after,
         .nav-links a.active::after {
-            width: 80%;
+            width: 70%;
         }
 
         .nav-links a:hover {
@@ -134,6 +134,28 @@
 
         .nav-links a.active {
             color: var(--accent-light);
+        }
+
+        /* nav-cta button (from about page) */
+        .nav-links .nav-cta {
+            background: linear-gradient(135deg, var(--accent) 0%, var(--accent-light) 100%);
+            border-radius: 30px;
+            padding: 8px 22px !important;
+            color: white;
+            font-weight: 600;
+            border: none;
+            box-shadow: 0 4px 12px rgba(15, 155, 142, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .nav-links .nav-cta::after {
+            display: none;
+        }
+
+        .nav-links .nav-cta:hover {
+            background: linear-gradient(135deg, var(--accent-light) 0%, var(--accent) 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 18px rgba(15, 155, 142, 0.5);
         }
 
         .mobile-menu {
@@ -147,7 +169,7 @@
             z-index: 1001;
         }
 
-        /* Services Hero Section */
+        /* ===== SERVICES HERO ===== */
         .services-hero {
             background: linear-gradient(135deg, rgba(26, 26, 46, 0.92) 0%, rgba(22, 33, 62, 0.88) 100%), url('images/hero-bg-img.jpg');
             background-size: cover;
@@ -217,7 +239,71 @@
             line-height: 1.7;
         }
 
-        /* Services Overview */
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 16px 36px;
+            background: linear-gradient(135deg, var(--accent) 0%, var(--accent-light) 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            box-shadow: 0 4px 15px rgba(15, 155, 142, 0.3);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 100%;
+            background: linear-gradient(135deg, var(--accent-light) 0%, var(--accent) 100%);
+            transition: width 0.5s ease;
+            z-index: -1;
+        }
+
+        .btn:hover::before {
+            width: 100%;
+        }
+
+        .btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(15, 155, 142, 0.4);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid white;
+            color: white;
+            box-shadow: none;
+        }
+
+        .btn-outline::before {
+            background: white;
+        }
+
+        .btn-outline:hover {
+            color: var(--primary);
+        }
+
+        /* ===== SERVICES OVERVIEW ===== */
         .services-overview {
             margin-bottom: 100px;
         }
@@ -345,7 +431,7 @@
             color: white;
         }
 
-        /* Detailed Services */
+        /* ===== DETAILED SERVICES ===== */
         .detailed-services {
             margin-bottom: 100px;
         }
@@ -428,7 +514,7 @@
             font-size: 1.1rem;
         }
 
-        /* Design Tools Section */
+        /* ===== DESIGN TOOLS SECTION ===== */
         .design-tools {
             background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
             color: white;
@@ -497,7 +583,7 @@
             font-size: 0.95rem;
         }
 
-        /* Work Process */
+        /* ===== WORK PROCESS ===== */
         .work-process {
             margin-bottom: 100px;
         }
@@ -551,7 +637,7 @@
             line-height: 1.7;
         }
 
-        /* Pricing Packages */
+        /* ===== PRICING ===== */
         .pricing {
             margin-bottom: 100px;
         }
@@ -652,14 +738,15 @@
             color: #bbb;
         }
 
-        /* Services CTA */
+        /* ===== SERVICES CTA ===== */
         .services-cta {
             background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
             color: white;
             padding: 100px 0;
             text-align: center;
-            margin-bottom: 80px;
-            border-radius: 20px;
+            /* Removed bottom margin so it touches footer */
+            margin-bottom: 0;
+            border-radius: 20px 20px 0 0;
             position: relative;
             overflow: hidden;
         }
@@ -671,7 +758,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 Z" fill="rgba(255,255,255,0.03)"/></svg>');
+            background: url('data:image/svg+xml,<svg xmlns="images/CTA1.jpg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 Z" fill="rgba(255,255,255,0.03)"/></svg>');
             background-size: cover;
         }
 
@@ -697,65 +784,7 @@
             line-height: 1.7;
         }
 
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            padding: 16px 36px;
-            background: linear-gradient(135deg, var(--accent) 0%, var(--accent-light) 100%);
-            color: white;
-            text-decoration: none;
-            border-radius: 8px;
-            font-weight: 600;
-            transition: all 0.3s;
-            border: none;
-            cursor: pointer;
-            text-align: center;
-            font-size: 1rem;
-            box-shadow: 0 4px 15px rgba(15, 155, 142, 0.3);
-            position: relative;
-            overflow: hidden;
-            z-index: 1;
-        }
-
-        .btn::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 0;
-            height: 100%;
-            background: linear-gradient(135deg, var(--accent-light) 0%, var(--accent) 100%);
-            transition: width 0.5s ease;
-            z-index: -1;
-        }
-
-        .btn:hover::before {
-            width: 100%;
-        }
-
-        .btn:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(15, 155, 142, 0.4);
-        }
-
-        .btn-outline {
-            background: transparent;
-            border: 2px solid white;
-            color: white;
-            box-shadow: none;
-        }
-
-        .btn-outline::before {
-            background: white;
-        }
-
-        .btn-outline:hover {
-            color: var(--primary);
-        }
-
-        /* Footer - Same as other pages */
+        /* ===== FOOTER ===== */
         footer {
             background-color: var(--primary);
             color: white;
@@ -862,175 +891,94 @@
             width: 100%;
         }
 
-        /* Responsive Design */
+        /* ===== RESPONSIVE ===== */
         @media (max-width: 1100px) {
-            .services-hero h1 {
-                font-size: 3rem;
-            }
-            
-            .pricing-card.featured {
-                transform: none;
-            }
-            
-            .pricing-card.featured:hover {
-                transform: translateY(-15px);
-            }
+            .services-hero h1 { font-size: 3rem; }
+            .pricing-card.featured { transform: none; }
+            .pricing-card.featured:hover { transform: translateY(-15px); }
         }
 
         @media (max-width: 992px) {
-            .services-hero h1 {
-                font-size: 2.5rem;
-            }
-            
-            .service-category {
-                padding: 40px 30px;
-            }
-            
-            .service-category-header {
-                flex-direction: column;
-                text-align: center;
-            }
-            
-            .service-category-icon {
-                margin-right: 0;
-                margin-bottom: 20px;
-            }
-            
-            .pricing-grid {
-                grid-template-columns: 1fr;
-                max-width: 500px;
-                margin-left: auto;
-                margin-right: auto;
-            }
-            
-            .pricing-card.featured {
-                transform: none;
-            }
+            .nav-links { gap: 15px; }
+            .nav-links a { font-size: 0.95rem; padding: 8px 8px; }
+            .nav-links .nav-cta { padding: 8px 16px !important; }
+
+            .services-hero h1 { font-size: 2.5rem; }
+            .service-category { padding: 40px 30px; }
+            .service-category-header { flex-direction: column; text-align: center; }
+            .service-category-icon { margin-right: 0; margin-bottom: 20px; }
+            .pricing-grid { grid-template-columns: 1fr; max-width: 500px; margin-left: auto; margin-right: auto; }
+            .pricing-card.featured { transform: none; }
         }
 
         @media (max-width: 768px) {
-            body {
-                padding-top: 70px;
-            }
-            
-            header {
-                padding: 15px 0;
-            }
-            
+            body { padding-top: 70px; }
+            header { padding: 15px 0; }
+
             .nav-links {
                 display: none;
-                position: fixed;
-                top: 0;
+                position: absolute;
+                top: 100%;
                 left: 0;
-                right: 0;
-                bottom: 0;
+                width: 100%;
                 background-color: var(--primary);
                 flex-direction: column;
-                padding: 100px 30px 30px;
+                padding: 20px;
+                gap: 15px;
                 text-align: center;
-                gap: 20px;
-                z-index: 999;
-                overflow-y: auto;
+                box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+                z-index: 998;
             }
-            
-            .nav-links.active {
-                display: flex;
-            }
-            
-            .nav-links li {
-                width: 100%;
-            }
-            
+
+            .nav-links.active { display: flex; }
+            .nav-links li { width: 100%; }
             .nav-links a {
                 display: block;
                 width: 100%;
-                padding: 15px;
-                font-size: 1.2rem;
-                border-radius: 8px;
+                padding: 12px;
+                font-size: 1.1rem;
+                border-radius: 6px;
                 background: rgba(255, 255, 255, 0.05);
             }
-            
-            .mobile-menu {
-                display: block;
+            .nav-links .nav-cta {
+                background: linear-gradient(135deg, var(--accent) 0%, var(--accent-light) 100%);
+                padding: 12px !important;
+                border-radius: 6px;
             }
-            
-            .logo {
-                font-size: 1.6rem;
-            }
-            
-            .services-hero {
-                padding: 80px 0 50px;
-                background-attachment: scroll;
-            }
-            
-            .services-hero h1 {
-                font-size: 2.2rem;
-            }
-            
-            .services-hero p {
-                font-size: 1.1rem;
-            }
-            
-            .section-title {
-                font-size: 2.2rem;
-            }
-            
-            .service-category {
-                padding: 30px 20px;
-            }
-            
-            .service-items {
-                grid-template-columns: 1fr;
-            }
-            
-            .tools-grid,
-            .process-steps {
-                grid-template-columns: 1fr;
-            }
-            
-            .pricing-card {
-                padding: 40px 30px;
-            }
+            .mobile-menu { display: block; }
+            .logo { font-size: 1.6rem; }
+
+            .services-hero { padding: 80px 0 50px; background-attachment: scroll; }
+            .services-hero h1 { font-size: 2.2rem; }
+            .services-hero p { font-size: 1.1rem; }
+            .section-title { font-size: 2.2rem; }
+            .service-category { padding: 30px 20px; }
+            .service-items { grid-template-columns: 1fr; }
+            .tools-grid, .process-steps { grid-template-columns: 1fr; }
+            .pricing-card { padding: 40px 30px; }
         }
 
         @media (max-width: 576px) {
-            .services-hero h1 {
-                font-size: 1.8rem;
-            }
-            
-            .section-title,
-            .service-category-header h3,
-            .services-cta-content h3 {
-                font-size: 2rem;
-            }
-            
-            .service-card {
-                padding: 35px 25px;
-            }
-            
-            .service-category-header h3 {
-                font-size: 1.8rem;
-            }
-            
-            .nav-links {
-                gap: 15px;
-            }
+            .services-hero h1 { font-size: 1.8rem; }
+            .section-title, .service-category-header h3, .services-cta-content h3 { font-size: 2rem; }
+            .service-card { padding: 35px 25px; }
+            .service-category-header h3 { font-size: 1.8rem; }
         }
     </style>
 </head>
 <body>
-    <!-- Header & Navigation -->
+    <!-- Header & Navigation (updated to match about page) -->
     <header id="header">
         <div class="container">
             <nav>
-                <a href="index.html" class="logo">Rabiu<span>Sani</span></a>
+                <a href="index.html" class="logo">Rabiu<span>SM</span></a>
                 <ul class="nav-links">
                     <li><a href="index.html">Home</a></li>
                     <li><a href="about.html">About</a></li>
                     <li><a href="portfolio.html">Portfolio</a></li>
                     <li><a href="services.html" class="active">Services</a></li>
-                    <li><a href="skills.html">Tech Stacks</a></li>
-                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="skills.html">Skills</a></li>
+                    <li><a href="contact.html" class="nav-cta">Let's Talk</a></li>
                 </ul>
                 <button class="mobile-menu" id="mobileMenuBtn">
                     <i class="fas fa-bars"></i>
@@ -1202,7 +1150,44 @@
         </div>
     </section>
 
-   
+    <!-- Design Tools Section -->
+    <section class="design-tools">
+        <div class="container">
+            <div class="tools-content">
+                <h2 class="section-title" style="color: white;">Professional Design Tools</h2>
+                <p style="text-align: center; max-width: 800px; margin: 0 auto; color: rgba(255,255,255,0.9); font-size: 1.1rem; line-height: 1.8;">
+                    I leverage industry-leading design tools to create high-quality, professional visual solutions for every project.
+                </p>
+                
+                <div class="tools-grid">
+                    <div class="tool-card">
+                        <div class="tool-icon"><i class="fas fa-paint-brush"></i></div>
+                        <h3>Adobe Creative Suite</h3>
+                        <p>Photoshop, Illustrator, InDesign, XD, After Effects for comprehensive design and motion graphics.</p>
+                    </div>
+                    
+                    <div class="tool-card">
+                        <div class="tool-icon"><i class="fas fa-pencil-ruler"></i></div>
+                        <h3>Figma & Sketch</h3>
+                        <p>UI/UX design, prototyping, and collaborative design systems for digital products.</p>
+                    </div>
+                    
+                    <div class="tool-card">
+                        <div class="tool-icon"><i class="fas fa-cube"></i></div>
+                        <h3>3D & Motion Tools</h3>
+                        <p>Blender, Cinema 4D for 3D visualization and motion design elements.</p>
+                    </div>
+                    
+                    <div class="tool-card">
+                        <div class="tool-icon"><i class="fas fa-video"></i></div>
+                        <h3>Video Editing</h3>
+                        <p>Premiere Pro, DaVinci Resolve for professional video editing and post-production.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Work Process -->
     <section class="work-process">
         <div class="container">
@@ -1316,7 +1301,7 @@
         </div>
     </section>
 
-    <!-- Services CTA -->
+    <!-- Services CTA (now flush with footer) -->
     <section class="services-cta">
         <div class="container">
             <div class="services-cta-content">
@@ -1352,7 +1337,7 @@
                         <li><a href="about.html"><i class="fas fa-chevron-right"></i> About Me</a></li>
                         <li><a href="portfolio.html"><i class="fas fa-chevron-right"></i> Portfolio</a></li>
                         <li><a href="services.html"><i class="fas fa-chevron-right"></i> Services</a></li>
-                        <li><a href="skills.html"><i class="fas fa-chevron-right"></i> Tech Stacks</a></li>
+                        <li><a href="skills.html"><i class="fas fa-chevron-right"></i> Skills</a></li>
                         <li><a href="contact.html"><i class="fas fa-chevron-right"></i> Contact</a></li>
                     </ul>
                 </div>
@@ -1402,34 +1387,24 @@
                 document.body.style.overflow = 'auto';
                 
                 // Update active class
-                document.querySelectorAll('.nav-links a').forEach(a => {
-                    a.classList.remove('active');
-                });
+                document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
                 link.classList.add('active');
             });
         });
 
         // Header scroll effect
         window.addEventListener('scroll', function() {
-            const header = document.getElementById('header');
-            if (window.scrollY > 50) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
+            document.getElementById('header').classList.toggle('scrolled', window.scrollY > 50);
         });
 
-        // Smooth scrolling for navigation links
+        // Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 const href = this.getAttribute('href');
-                
-                // Only prevent default for on-page anchor links
                 if (href.startsWith('#') && href.length > 1) {
                     e.preventDefault();
-                    
                     const targetElement = document.querySelector(href);
-                    if(targetElement) {
+                    if (targetElement) {
                         window.scrollTo({
                             top: targetElement.offsetTop - 80,
                             behavior: 'smooth'
@@ -1439,12 +1414,8 @@
             });
         });
 
-        // Add animation to elements on scroll
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
+        // Intersection Observer for animations
+        const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' };
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -1456,63 +1427,48 @@
 
         // Animate elements
         document.addEventListener('DOMContentLoaded', function() {
-            // Animate service cards
-            const serviceCards = document.querySelectorAll('.service-card');
-            serviceCards.forEach((card, index) => {
+            // service cards
+            document.querySelectorAll('.service-card').forEach((card, index) => {
                 card.style.opacity = '0';
                 card.style.transform = 'translateY(30px)';
                 card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-                setTimeout(() => {
-                    observer.observe(card);
-                }, index * 150);
+                setTimeout(() => observer.observe(card), index * 150);
             });
 
-            // Animate service items
-            const serviceItems = document.querySelectorAll('.service-item');
-            serviceItems.forEach((item, index) => {
+            // service items
+            document.querySelectorAll('.service-item').forEach((item, index) => {
                 item.style.opacity = '0';
                 item.style.transform = 'translateY(20px)';
                 item.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-                setTimeout(() => {
-                    observer.observe(item);
-                }, index * 100);
+                setTimeout(() => observer.observe(item), index * 100);
             });
 
-            // Animate tool cards
-            const toolCards = document.querySelectorAll('.tool-card');
-            toolCards.forEach((card, index) => {
+            // tool cards
+            document.querySelectorAll('.tool-card').forEach((card, index) => {
                 card.style.opacity = '0';
                 card.style.transform = 'translateY(30px)';
                 card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-                setTimeout(() => {
-                    observer.observe(card);
-                }, index * 150);
+                setTimeout(() => observer.observe(card), index * 150);
             });
 
-            // Animate process steps
-            const processSteps = document.querySelectorAll('.process-step');
-            processSteps.forEach((step, index) => {
+            // process steps
+            document.querySelectorAll('.process-step').forEach((step, index) => {
                 step.style.opacity = '0';
                 step.style.transform = 'translateY(30px)';
                 step.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-                setTimeout(() => {
-                    observer.observe(step);
-                }, index * 200);
+                setTimeout(() => observer.observe(step), index * 200);
             });
 
-            // Animate pricing cards
-            const pricingCards = document.querySelectorAll('.pricing-card');
-            pricingCards.forEach((card, index) => {
+            // pricing cards
+            document.querySelectorAll('.pricing-card').forEach((card, index) => {
                 card.style.opacity = '0';
                 card.style.transform = 'translateY(30px)';
                 card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-                setTimeout(() => {
-                    observer.observe(card);
-                }, index * 200);
+                setTimeout(() => observer.observe(card), index * 200);
             });
         });
 
-        // Initialize with header scroll check
+        // initial header check
         window.dispatchEvent(new Event('scroll'));
     </script>
 </body>
