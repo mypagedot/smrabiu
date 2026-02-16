@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rabiu Sani Muhammad (Aljauromanee) | Full Brand Designer - Graphics & UI/UX</title>
-    <meta name="description" content="Rabiu Sani Muhammad (Aljauromanee) - Professional Full Brand Designer specializing in Graphics Design, UI/UX Design, and Visual Identity Systems">
-    <meta name="keywords" content="Brand Designer, Graphics Designer, UI/UX Designer, Visual Identity, Logo Design, Web Design, Digital Marketing">
+    <title>Rabiu Sani Muhammad | Mobile Engineer & Brand Designer</title>
+    <!-- Meta description aligned with "mobile software engineer & visual brand systems designer" -->
+    <meta name="description" content="Rabiu Sani Muhammad (Aljauromanee) – Mobile Software Engineer & Visual Brand Systems Designer. I build cross‑platform apps and craft cohesive visual identities.">
+    <meta name="keywords" content="Mobile Developer, iOS, Android, React Native, Flutter, Brand Designer, UI/UX, Visual Identity, Nigeria">
     
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="images/favicon_io/favicon.ico">
@@ -61,7 +62,7 @@
             top: 0;
             left: 0;
             right: 0;
-            z-index: 1000;
+            z-index: 10000;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
             transition: all 0.3s ease;
             backdrop-filter: blur(10px);
@@ -96,7 +97,7 @@
         .nav-links {
             display: flex;
             list-style: none;
-            gap: 35px;
+            gap: 25px;
             align-items: center;
         }
 
@@ -105,7 +106,7 @@
             text-decoration: none;
             font-weight: 500;
             transition: all 0.3s;
-            padding: 8px 16px;
+            padding: 8px 12px;
             border-radius: 4px;
             font-size: 1rem;
             position: relative;
@@ -125,7 +126,7 @@
 
         .nav-links a:hover::after,
         .nav-links a.active::after {
-            width: 80%;
+            width: 70%;
         }
 
         .nav-links a:hover {
@@ -136,6 +137,28 @@
             color: var(--accent-light);
         }
 
+        .nav-links .nav-cta {
+            background: linear-gradient(135deg, var(--accent) 0%, var(--accent-light) 100%);
+            border-radius: 30px;
+            padding: 8px 22px !important;
+            color: white;
+            font-weight: 600;
+            border: none;
+            box-shadow: 0 4px 12px rgba(15, 155, 142, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .nav-links .nav-cta::after {
+            display: none;
+        }
+
+        .nav-links .nav-cta:hover {
+            background: linear-gradient(135deg, var(--accent-light) 0%, var(--accent) 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 18px rgba(15, 155, 142, 0.5);
+            color: white;
+        }
+
         .mobile-menu {
             display: none;
             font-size: 1.5rem;
@@ -144,7 +167,85 @@
             background: none;
             border: none;
             padding: 5px;
-            z-index: 1001;
+            z-index: 10001;
+        }
+
+        /* Tablet adjustments */
+        @media (max-width: 992px) {
+            .nav-links {
+                gap: 15px;
+            }
+            .nav-links a {
+                font-size: 0.95rem;
+                padding: 8px 8px;
+            }
+            .nav-links .nav-cta {
+                padding: 8px 16px !important;
+            }
+        }
+
+        /* Mobile styles */
+        @media (max-width: 768px) {
+            body {
+                padding-top: 70px;
+            }
+            
+            header {
+                padding: 15px 0;
+            }
+            
+            .nav-links {
+                display: none;
+                position: fixed;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                height: calc(100vh - 70px);
+                -webkit-backdrop-filter: blur(8px);
+                backdrop-filter: blur(8px);
+                flex-direction: column;
+                padding: 40px 30px;
+                text-align: center;
+                gap: 20px;
+                z-index: 9999;
+                overflow-y: auto;
+                background: rgba(26, 26, 46, 0.95);
+            }
+            
+            .nav-links.active {
+                display: flex;
+            }
+            
+            .nav-links li {
+                width: 100%;
+            }
+            
+            .nav-links a {
+                display: block;
+                width: 100%;
+                padding: 15px;
+                font-size: 1.2rem;
+                border-radius: 8px;
+                background: transparent;
+            }
+            
+            .nav-links .nav-cta {
+                background: linear-gradient(135deg, var(--accent) 0%, var(--accent-light) 100%);
+                padding: 15px !important;
+                border-radius: 8px;
+                box-shadow: none;
+            }
+            .nav-links .nav-cta:hover {
+                transform: translateY(-2px);
+            }
+            
+            .mobile-menu {
+                display: block;
+            }
+            
+            .logo {
+                font-size: 1.6rem;
+            }
         }
 
         /* Hero Section */
@@ -159,6 +260,9 @@
             margin-bottom: 80px;
             position: relative;
             overflow: hidden;
+            z-index: 1;
+            backdrop-filter: blur(10px);
+            border-top: 1px solid rgba(255,255,255,0.15);
         }
 
         .hero::before {
@@ -170,6 +274,7 @@
             bottom: 0;
             background: radial-gradient(circle at 20% 50%, rgba(15, 155, 142, 0.15) 0%, transparent 50%),
                         radial-gradient(circle at 80% 20%, rgba(29, 201, 183, 0.1) 0%, transparent 50%);
+            pointer-events: none;
         }
 
         .hero-content {
@@ -207,6 +312,21 @@
             border-radius: 2px;
         }
 
+        .typed-cursor {
+            display: inline-block;
+            width: 4px;
+            height: 1.2em;
+            background-color: var(--accent-light);
+            margin-left: 4px;
+            vertical-align: middle;
+            animation: blink 0.7s infinite;
+        }
+
+        @keyframes blink {
+            0%, 50% { opacity: 1; }
+            51%, 100% { opacity: 0; }
+        }
+
         .hero p {
             font-size: 1.3rem;
             margin-bottom: 35px;
@@ -215,6 +335,28 @@
             margin-left: auto;
             margin-right: auto;
             line-height: 1.7;
+        }
+
+        .filter-status {
+            margin-top: 15px;
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.8);
+            display: inline-block;
+            background: rgba(0,0,0,0.3);
+            padding: 8px 20px;
+            border-radius: 40px;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .filter-status i {
+            margin-right: 8px;
+            color: var(--accent-light);
+        }
+
+        #current-filter-display {
+            font-weight: 600;
+            color: var(--accent-light);
         }
 
         .cta-buttons {
@@ -657,96 +799,110 @@
             transform: translateY(-2px);
         }
 
-        /* Unique Blend Section */
-        .unique-blend {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
-            color: white;
-            padding: 100px 0;
+        /* ===== IMPACT STATS SECTION (solid white background) ===== */
+        .impact-stats {
+            background: white;              /* solid white */
+            color: var(--dark);
+            padding: 80px 0;
             border-radius: 20px;
-            margin-bottom: 100px;
+            margin-bottom: 0;                /* no gap */
             position: relative;
             overflow: hidden;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05); /* subtle depth */
         }
 
-        .unique-blend::before {
-            content: '';
-            position: absolute;
-            width: 400px;
-            height: 400px;
-            background: radial-gradient(circle, rgba(255, 255, 255, 0.05) 0%, transparent 70%);
-            top: -200px;
-            right: -200px;
-            border-radius: 50%;
+        /* remove dark gradient pseudo-element */
+        .impact-stats::before {
+            display: none;
         }
 
-        .blend-content {
+        .impact-stats .section-title {
+            color: var(--primary);           /* dark title */
+            margin-bottom: 40px;
+        }
+        .impact-stats .section-title::after {
+            background: var(--accent);        /* keep accent underline */
+        }
+
+        .stats-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            align-items: center;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            max-width: 1000px;
+            margin: 0 auto;
             position: relative;
             z-index: 1;
-        }
-
-        .blend-text h2 {
-            font-size: 2.6rem;
-            margin-bottom: 25px;
-            color: white;
-            font-weight: 700;
-            font-family: 'Montserrat', sans-serif;
-        }
-
-        .blend-text p {
-            margin-bottom: 20px;
-            color: rgba(255, 255, 255, 0.9);
-            font-size: 1.1rem;
-            line-height: 1.8;
-        }
-
-        .blend-stats {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 25px;
         }
 
         .stat-item {
             text-align: center;
             padding: 30px 20px;
-            background: rgba(255, 255, 255, 0.08);
+            background: #f2f2f2;            /* light gray background for cards */
             border-radius: 15px;
             transition: all 0.3s;
-            backdrop-filter: blur(5px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.02);
         }
 
         .stat-item:hover {
-            background: rgba(255, 255, 255, 0.12);
+            background: #eaeaea;
             transform: translateY(-8px);
-            border-color: rgba(255, 255, 255, 0.2);
+            border-color: var(--accent-light);
         }
 
         .stat-item h3 {
             font-size: 2.8rem;
-            color: var(--accent-light);
+            color: var(--accent);            /* accent color for numbers */
             margin-bottom: 10px;
             font-weight: 700;
+            line-height: 1.2;
         }
 
         .stat-item p {
-            color: rgba(255, 255, 255, 0.85);
-            font-size: 1rem;
+            color: var(--dark);               /* dark text */
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
-        /* Call to Action Section */
+        /* Responsive stats */
+        @media (max-width: 768px) {
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+            }
+        }
+        @media (max-width: 480px) {
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ===== CTA SECTION with customizable background image ===== */
         .cta-section {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            position: relative;
             color: white;
             padding: 100px 0;
             text-align: center;
-            margin-bottom: 80px;
-            border-radius: 20px;
-            position: relative;
+            margin-bottom: 0;           /* remove bottom margin to eliminate gap */
+            border-radius: 0px;
             overflow: hidden;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-image: var(--cta-bg, linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%));
+        }
+
+        .cta-section::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 0;
         }
 
         .cta-section::before {
@@ -758,13 +914,15 @@
             height: 100%;
             background: linear-gradient(45deg, transparent 50%, rgba(255, 255, 255, 0.03) 50%);
             background-size: 20px 20px;
+            z-index: 1;
+            pointer-events: none;
         }
 
         .cta-content {
             max-width: 800px;
             margin: 0 auto;
             position: relative;
-            z-index: 1;
+            z-index: 2;
         }
 
         .cta-content h3 {
@@ -789,6 +947,7 @@
             padding: 70px 0 25px;
             position: relative;
             overflow: hidden;
+            margin-top: 0;              /* ensure no top margin */
         }
 
         footer::before {
@@ -882,28 +1041,58 @@
             z-index: 1;
         }
 
-        /* Responsive Design */
+        /* Back to Top Button */
+        #back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--accent), var(--accent-light));
+            color: white;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 999;
+            border: 2px solid rgba(255,255,255,0.2);
+        }
+
+        #back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        #back-to-top:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(15, 155, 142, 0.5);
+        }
+
+        /* Responsive Design for larger screens */
         @media (max-width: 1100px) {
             .hero h1 {
                 font-size: 3.2rem;
             }
             
-            .introduction, .blend-content {
+            .introduction {
                 gap: 50px;
             }
         }
 
         @media (max-width: 992px) {
-            .introduction, .blend-content {
+            .introduction {
                 grid-template-columns: 1fr;
             }
             
             .hero h1 {
                 font-size: 2.8rem;
-            }
-            
-            .blend-stats {
-                margin-top: 40px;
             }
             
             .work-grid {
@@ -916,55 +1105,6 @@
         }
 
         @media (max-width: 768px) {
-            body {
-                padding-top: 70px;
-            }
-            
-            header {
-                padding: 15px 0;
-            }
-            
-            .nav-links {
-                display: none;
-                position: fixed;
-                top: 0;
-                left: 0;
-                right: 0;
-                bottom: 0;
-                background-color: var(--primary);
-                flex-direction: column;
-                padding: 100px 30px 30px;
-                text-align: center;
-                gap: 20px;
-                z-index: 999;
-                overflow-y: auto;
-            }
-            
-            .nav-links.active {
-                display: flex;
-            }
-            
-            .nav-links li {
-                width: 100%;
-            }
-            
-            .nav-links a {
-                display: block;
-                width: 100%;
-                padding: 15px;
-                font-size: 1.2rem;
-                border-radius: 8px;
-                background: rgba(255, 255, 255, 0.05);
-            }
-            
-            .mobile-menu {
-                display: block;
-            }
-            
-            .logo {
-                font-size: 1.6rem;
-            }
-            
             .hero {
                 padding: 100px 0 70px;
                 background-attachment: scroll;
@@ -999,6 +1139,14 @@
             .services-grid {
                 grid-template-columns: 1fr;
             }
+
+            #back-to-top {
+                bottom: 20px;
+                right: 20px;
+                width: 45px;
+                height: 45px;
+                font-size: 1.1rem;
+            }
         }
 
         @media (max-width: 576px) {
@@ -1006,7 +1154,7 @@
                 font-size: 2rem;
             }
             
-            .intro-text h2, .section-title, .blend-text h2, .cta-content h3 {
+            .intro-text h2, .section-title, .cta-content h3 {
                 font-size: 2rem;
             }
             
@@ -1018,16 +1166,8 @@
                 grid-template-columns: 1fr;
             }
             
-            .blend-stats {
-                grid-template-columns: 1fr;
-            }
-            
             .work-actions {
                 flex-direction: column;
-            }
-            
-            .stat-item h3 {
-                font-size: 2.2rem;
             }
         }
     </style>
@@ -1037,14 +1177,14 @@
     <header id="header">
         <div class="container">
             <nav>
-                <a href="index.html" class="logo">Rabiu<span>Sani</span></a>
+                <a href="index.html" class="logo">Rabiu<span>SM</span></a>
                 <ul class="nav-links">
                     <li><a href="index.html" class="active">Home</a></li>
                     <li><a href="about.html">About</a></li>
                     <li><a href="portfolio.html">Portfolio</a></li>
-                    <li><a href="skills.html">Tech Stacks</a></li>
                     <li><a href="services.html">Services</a></li>
-                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="skills.html">Skills</a></li>
+                    <li><a href="contact.html" class="nav-cta">Let's Talk</a></li>
                 </ul>
                 <button class="mobile-menu" id="mobileMenuBtn">
                     <i class="fas fa-bars"></i>
@@ -1053,49 +1193,62 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
+    <!-- Hero Section with one‑time typing -->
     <section class="hero">
         <div class="container">
             <div class="hero-content">
-                <h1>Full <span class="highlight">Brand Design</span> & <span class="highlight">Visual Identity</span> Solutions</h1>
-                <p>I'm <strong>Rabiu SM (Aljauromanee)</strong>, a Software System Engineer and professional Full Brand Designer specializing in Mobile App Dev, Graphics Design, UI/UX Design, and comprehensive Visual Identity Systems that transform businesses and create memorable brand experiences.</p>
+                <h2>I am <strong>Rabiu Sani M. (Aljauromanee),</strong> a Mobile</h2>
+                <h1>
+                     <span class="highlight" id="typed-role"></span> 
+                    & <span class="highlight">Visual Brand Systems Designer</span>
+                </h1>
+                <div class="filter-status">
+                    <span> 
+                        <i class="fas fa-mobile-alt"></i>  Mobile Apps · Brand Design · UI/UX
+                    </span>
+                </div>
+
                 <div class="cta-buttons">
-                    <a href="skills.html" class="btn"><i class="fas fa-eye"></i> STACKS I USE</a>
-                     <a href="myjourney.html" class="btn btn-outline"><i class="fas fa-calendar-alt"></i> MY JOURNEY</a>
-                    <a href="portfolio.html" class="btn"><i class="fas fa-eye"></i> PORTFOLIO</a>
-                    
-                    <a href="contact.html" class="btn btn-outline"><i class="fas fa-calendar-alt"></i> LET'S TALK</a>
-                 
+                    <a href="portfolio.html" class="btn"><i class="fas fa-briefcase"></i> VIEW PORTFOLIO</a>
+                    <a href="skills.html" class="btn btn-outline"><i class="fas fa-code"></i> MY SKILLS</a>
+                    <a href="myjourney.html" class="btn btn-outline"><i class="fas fa-graduation-cap"></i> EDUCATION</a>
+                    <a href="contact.html" class="btn btn-outline"><i class="fas fa-comment"></i> LET'S TALK</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Introduction Section -->
+    <!-- Introduction Section (dual narrative) -->
     <section class="container">
         <div class="introduction">
             <div class="intro-text">
-                <h2>Designing Brands That Resonate</h2>
-                <p>Welcome to my creative world where strategic thinking meets exceptional design. As a Full Brand Designer, I create comprehensive visual identities that not only look stunning but also communicate brand values effectively.</p>
-                <p>Based in Nigeria with international exposure, I specialize in creating brand systems that work across multiple platforms – from digital interfaces to print materials, ensuring consistency and impact at every touchpoint.</p>
-                <p>My approach combines aesthetic excellence with strategic insight, resulting in designs that are both beautiful and functional, helping businesses stand out in competitive markets.</p>
+                <h2>Code meets Creativity</h2>
+                <p>
+                <strong>
+                I specialize in bridging the gap between engineering and design.
+                </strong> 
+                 With a solid foundation in software engineering, focused on mobile application development, and a passion for visual brand systems design, I create products that are both technically robust and visually compelling. I have assisted startups and established organizations in developing high-performance iOS and Android applications using React Native, Flutter, and native technologies, while simultaneously crafting distinctive brand identities that capture their unique vision.</p>
+                 
+                 <p>My approach combines clean software architecture with strategic design thinking, ensuring that every solution I deliver is intuitive, scalable, and visually aligned with the brand it represents.
+            </p>
+               
                 
                 <div class="skills-tags">
+                    <span class="skill-tag">iOS & Android</span>
+                    <span class="skill-tag">React Native / Flutter</span>
+                    <span class="skill-tag">Mobile Architecture</span>
+                    <span class="skill-tag">UI/UX Design</span>
                     <span class="skill-tag">Brand Identity</span>
                     <span class="skill-tag">Logo Design</span>
-                    <span class="skill-tag">UI/UX Design</span>
-                    <span class="skill-tag">Mobile App Dev</span>
-                    <span class="skill-tag">Web Design</span>
-                    <span class="skill-tag">Print Design</span>
-                    <span class="skill-tag">Digital Marketing</span>
-                    <span class="skill-tag">Packaging Design</span>
+                    <span class="skill-tag">API Integration</span>
+                    <span class="skill-tag">Design Systems</span>
                     <span class="skill-tag">Motion Graphics</span>
                 </div>
                 
-                <a href="about.html" class="btn" style="margin-top: 30px;"><i class="fas fa-user"></i> Learn More About Me</a>
+                <a href="about.html" class="btn" style="margin-top: 30px;"><i class="fas fa-user"></i> Explore More About Me</a>
             </div>
             <div class="intro-image">
-                <img src="images/CTA3.png" alt="Rabiu Sani Muhammad - Brand Designer">
+                <img src="images/rsmm.jpeg" alt="Rabiu Sani Muhammad - Engineer & Designer">
             </div>
         </div>
     </section>
@@ -1103,39 +1256,37 @@
     <!-- Services/Expertise Section -->
     <section class="container">
         <div class="services">
-            <h2 class="section-title">My Design Services</h2>
+            <h2 class="section-title">What I Do</h2>
             <div class="services-grid">
-                <div class="service-card">
-                    <i class="fas fa-palette"></i>
-                    <h3>Brand Identity Design</h3>
-                    <p>Comprehensive visual identity systems including logos, color palettes, typography, and brand guidelines that create memorable and cohesive brand experiences.</p>
-                </div>
-                <div class="service-card">
-                    <i class="fas fa-laptop"></i>
-                    <h3>UI/UX Design</h3>
-                    <p>User-centered interface designs and experiences for websites and mobile applications that are intuitive, engaging, and conversion-focused.</p>
-                </div>
-                <div class="service-card">
-                    <i class="fas fa-print"></i>
-                    <h3>Print & Packaging Design</h3>
-                    <p>Eye-catching print materials and packaging designs that communicate brand values and create tangible connections with customers.</p>
-                </div>
-                <div class="service-card">
-                    <i class="fas fa-bullhorn"></i>
-                    <h3>Digital Marketing Design</h3>
-                    <p>Strategic visual content for digital marketing campaigns including social media graphics, ads, banners, and email designs that drive engagement.</p>
-                </div>
-
-                <div class="service-card">
-                    <i class="fas fa-palette"></i>
-                    <h3>Modern Website Dev</h3>
-                    <p>Beautiful, responsive websites that are optimized for performance, accessibility, and user experience across all devices and platforms.</p>
-                </div>
-
                 <div class="service-card">
                     <i class="fas fa-mobile-alt"></i>
                     <h3>Mobile App Development</h3>
-                    <p>End-to-end mobile application development services for iOS and Android platforms, including UI/UX design, app architecture, and deployment.</p>
+                    <p>End‑to‑end development of native and cross‑platform apps (iOS/Android) using React Native, Flutter, Swift, Kotlin – clean code, smooth performance.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-paint-brush"></i>
+                    <h3>Brand Identity Design</h3>
+                    <p>Strategic visual identities – logos, colour systems, typography, and guidelines that make your brand unforgettable across all touchpoints.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-cubes"></i>
+                    <h3>System Architecture</h3>
+                    <p>Scalable app architecture, API design, state management, and backend integration – built to grow with your user base.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-pencil-ruler"></i>
+                    <h3>UI/UX Design</h3>
+                    <p>User‑centred interfaces, wireframing to high‑fidelity prototypes, with a focus on usability and conversion.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-print"></i>
+                    <h3>Print & Packaging</h3>
+                    <p>Brochures, packaging, business cards – tangible brand experiences that complement your digital presence.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-bullhorn"></i>
+                    <h3>Digital Marketing Assets</h3>
+                    <p>Social media creatives, ad banners, email templates – consistent, high‑impact visuals for your campaigns.</p>
                 </div>
             </div>
         </div>
@@ -1143,17 +1294,33 @@
 
     <!-- Recent Work Section -->
     <section class="container recent-work">
-        <h2 class="section-title">Featured Design Projects</h2>
+        <h2 class="section-title">Featured Work</h2>
         
         <div class="work-filter">
-            <button class="filter-btn active" data-filter="all">All Projects</button>
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="mobile">Mobile Apps</button>
             <button class="filter-btn" data-filter="branding">Brand Identity</button>
-            <button class="filter-btn" data-filter="uiux">UI/UX Design</button>
-            <button class="filter-btn" data-filter="print">Print Design</button>
+            <button class="filter-btn" data-filter="uiux">UI/UX</button>
         </div>
         
         <div class="work-grid">
-            <!-- Project 1 -->
+            <div class="work-item" data-category="mobile">
+                <div class="work-img">
+                    <img src="images/finTech.jpg" alt="FinTech Mobile App">
+                    <div class="work-overlay">
+                        <span class="work-category">Mobile App</span>
+                    </div>
+                </div>
+                <div class="work-info">
+                    <h3>PayQuick – FinTech App</h3>
+                    <p>Cross‑platform mobile banking app with biometric login, real‑time transactions, and an intuitive dashboard. Built with React Native + Node.js.</p>
+                    <div class="work-actions">
+                        <a href="project-detail.html" class="view-btn">View Details</a>
+                        <a href="contact.html?project=PayQuick" class="booking-btn">Inquire</a>
+                    </div>
+                </div>
+            </div>
+            
             <div class="work-item" data-category="branding">
                 <div class="work-img">
                     <img src="images/ecofresh-ide.jpg" alt="EcoFresh Brand Identity">
@@ -1162,96 +1329,70 @@
                     </div>
                 </div>
                 <div class="work-info">
-                    <h3>EcoFresh Organic Foods</h3>
-                    <p>Complete brand identity system for an organic food company, including logo, packaging, and marketing materials that communicate freshness and sustainability.</p>
+                    <h3>EcoFresh Organics</h3>
+                    <p>Full visual identity – logo, packaging, and marketing collateral for an organic food startup. Sustainable look, strong shelf presence.</p>
                     <div class="work-actions">
                         <a href="project-detail.html" class="view-btn">View Details</a>
-                        <a href="contact.html?project=EcoFresh+Branding" class="booking-btn">Book Similar Project</a>
+                        <a href="contact.html?project=EcoFresh" class="booking-btn">Inquire</a>
                     </div>
                 </div>
             </div>
             
-            <!-- Project 2 -->
             <div class="work-item" data-category="uiux">
                 <div class="work-img">
-                    <img src="images/finTech.jpg" alt="FinTech Mobile App UI/UX">
+                    <img src="images/coporatebranding.jpg" alt="MediTrack UI/UX">
                     <div class="work-overlay">
                         <span class="work-category">UI/UX Design</span>
                     </div>
                 </div>
                 <div class="work-info">
-                    <h3>FinTech Mobile Banking App</h3>
-                    <p>User experience and interface design for a mobile banking application, focusing on intuitive navigation, security, and seamless transaction flows.</p>
+                    <h3>MediTrack – Health Dashboard</h3>
+                    <p>User experience design for a patient‑monitoring dashboard. Simplified workflows, accessible components, and a calming colour palette.</p>
                     <div class="work-actions">
                         <a href="project-detail.html" class="view-btn">View Details</a>
-                        <a href="contact.html" class="booking-btn">Book UI/UX Project</a>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Project 3 -->
-            <div class="work-item" data-category="print">
-                <div class="work-img">
-                    <img src="images/coporatebranding.jpg" alt="Corporate Branding Package">
-                    <div class="work-overlay">
-                        <span class="work-category">Print Design</span>
-                    </div>
-                </div>
-                <div class="work-info">
-                    <h3>Corporate Branding Package</h3>
-                    <p>Complete corporate identity package including business cards, letterheads, envelopes, and presentation folders for a multinational consulting firm.</p>
-                    <div class="work-actions">
-                        <a href="project-detail.html" class="view-btn">View Details</a>
-                        <a href="contact.html?project=Corporate+Branding" class="booking-btn">Book Branding Package</a>
+                        <a href="contact.html?project=MediTrack" class="booking-btn">Inquire</a>
                     </div>
                 </div>
             </div>
         </div>
         
         <div style="text-align: center; margin-top: 50px;">
-            <a href="portfolio.html" class="btn"><i class="fas fa-images"></i> View Full Portfolio</a>
+            <a href="portfolio.html" class="btn"><i class="fas fa-arrow-right"></i> See All Projects</a>
         </div>
     </section>
 
-    <!-- Unique Blend Section -->
-    <section class="unique-blend">
+    <!-- ===== IMPACT STATS SECTION (solid white) ===== -->
+    <section class="impact-stats">
         <div class="container">
-            <div class="blend-content">
-                <div class="blend-text">
-                    <h2>Strategic Design Thinking</h2>
-                    <p>My design philosophy combines creative excellence with strategic business thinking. I believe great design should not only look beautiful but also solve real business problems and drive measurable results.</p>
-                    <p>With expertise in both traditional graphic design and modern digital interfaces, I create brand experiences that work seamlessly across all platforms, ensuring consistency and impact.</p>
-                    <p>Every project begins with deep research into your business, audience, and market position, resulting in designs that are not just visually appealing but strategically aligned with your goals.</p>
+            <h2 class="section-title">Impact by numbers</h2>
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <h3><span class="stat-number" data-target="5" data-suffix="+">0</span></h3>
+                    <p>Projects Delivered</p>
                 </div>
-                <div class="blend-stats">
-                    <div class="stat-item">
-                        <h3>150+</h3>
-                        <p>Successful Projects</p>
-                    </div>
-                    <div class="stat-item">
-                        <h3>98%</h3>
-                        <p>Client Satisfaction</p>
-                    </div>
-                    <div class="stat-item">
-                        <h3>7+</h3>
-                        <p>Years Experience</p>
-                    </div>
-                    <div class="stat-item">
-                        <h3>50+</h3>
-                        <p>Happy Clients</p>
-                    </div>
+                <div class="stat-item">
+                    <h3><span class="stat-number" data-target="80" data-suffix="%">0</span></h3>
+                    <p>Client Satisfaction</p>
+                </div>
+                <div class="stat-item">
+                    <h3><span class="stat-number" data-target="5" data-suffix="+">0</span></h3>
+                    <p>Years Experience</p>
+                </div>
+                <div class="stat-item">
+                    <h3><span class="stat-number" data-target="4" data-suffix="+">0</span></h3>
+                    <p>Happy Clients</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Call to Action Section -->
-    <section class="cta-section">
+    <!-- ===== CALL TO ACTION with customizable background image ===== -->
+    <section class="cta-section" style="--cta-bg: url('images/CTA8.png');">
         <div class="container">
             <div class="cta-content">
-                <h3>Ready to Elevate Your Brand?</h3>
-                <p>Let's collaborate to create a powerful visual identity that communicates your unique value, connects with your audience, and drives business growth. Schedule a free design consultation today.</p>
-                <a href="https://forms.gle/KHfLihRz1UQKJ1YR6" class="btn"><i class="fas fa-calendar-check"></i> Book Your Free Consultation</a>
+                <h3>Ready to build something great?</h3>
+                <p>Whether you need a polished mobile app, a complete brand overhaul, or a blend of both – let's talk. I'll help you bring your vision to life.</p>
+                <a href="https://forms.gle/KHfLihRz1UQKJ1YR6" class="btn"><i class="fas fa-calendar-check"></i> Book a Free Consultation</a>
             </div>
         </div>
     </section>
@@ -1262,13 +1403,13 @@
             <div class="footer-content">
                 <div class="footer-column">
                     <h3>Rabiu Sani Muhammad</h3>
-                    <p>Professional Full Brand Designer specializing in comprehensive visual identity systems, UI/UX design, and strategic brand development for businesses of all sizes.</p>
+                    <p>Mobile Software Engineer & Visual Brand Systems Designer. I create high‑performance apps and distinctive brand identities for forward‑thinking businesses.</p>
                     <div class="social-links">
                         <a href="https://wa.me/2349123234431"><i class="fab fa-whatsapp"></i></a>
-                        <a href="#"><i class="fab fa-dribbble"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
                         <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-dribbble"></i></a>
                         <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
                     </div>
                 </div>
                 <div class="footer-column">
@@ -1277,7 +1418,7 @@
                         <li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
                         <li><a href="about.html"><i class="fas fa-chevron-right"></i> About Me</a></li>
                         <li><a href="portfolio.html"><i class="fas fa-chevron-right"></i> Portfolio</a></li>
-                        <li><a href="skills.html"><i class="fas fa-chevron-right"></i> Tech Stacks</a></li>
+                        <li><a href="skills.html"><i class="fas fa-chevron-right"></i> Skills</a></li>
                         <li><a href="services.html"><i class="fas fa-chevron-right"></i> Services</a></li>
                         <li><a href="contact.html"><i class="fas fa-chevron-right"></i> Contact</a></li>
                     </ul>
@@ -1288,15 +1429,18 @@
                         <li><a href="mailto:aljauromanee@gmail.com"><i class="fas fa-envelope"></i> aljauromanee@gmail.com</a></li>
                         <li><a href="tel:+2349123234431"><i class="fas fa-phone-alt"></i> +234 9123234431</a></li>
                         <li><a href="#"><i class="fas fa-map-marker-alt"></i> FCT, Abuja, Nigeria</a></li>
-                        <li><a href="#"><i class="fas fa-globe"></i> Available for International Projects</a></li>
+                        <li><a href="#"><i class="fas fa-globe"></i> Available Worldwide</a></li>
                     </ul>
                 </div>
             </div>
             <div class="copyright">
-                <p>&copy; 2026 Rabiu Sani Muhammad (Aljauromanee). All Rights Reserved. | Professional Brand Design Portfolio</p>
+                <p>&copy; 2026 Rabiu Sani Muhammad (Aljauromanee). All Rights Reserved. | Mobile Software Engineer & Visual Brand Systems Designer</p>
             </div>
         </div>
     </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" aria-label="Back to top"><i class="fas fa-arrow-up"></i></button>
 
     <script>
         // Mobile menu toggle
@@ -1307,7 +1451,6 @@
         mobileMenuBtn.addEventListener('click', function() {
             navLinks.classList.toggle('active');
             
-            // Toggle menu icon
             if (navLinks.classList.contains('active')) {
                 menuIcon.classList.remove('fa-bars');
                 menuIcon.classList.add('fa-times');
@@ -1319,7 +1462,6 @@
             }
         });
 
-        // Close mobile menu when clicking a link
         document.querySelectorAll('.nav-links a').forEach(link => {
             link.addEventListener('click', () => {
                 navLinks.classList.remove('active');
@@ -1327,7 +1469,6 @@
                 menuIcon.classList.add('fa-bars');
                 document.body.style.overflow = 'auto';
                 
-                // Update active class
                 document.querySelectorAll('.nav-links a').forEach(a => {
                     a.classList.remove('active');
                 });
@@ -1335,7 +1476,6 @@
             });
         });
 
-        // Header scroll effect
         window.addEventListener('scroll', function() {
             const header = document.getElementById('header');
             if (window.scrollY > 50) {
@@ -1345,17 +1485,20 @@
             }
         });
 
-        // Work filtering
         document.querySelectorAll('.filter-btn').forEach(button => {
             button.addEventListener('click', function() {
-                // Update active button
                 document.querySelectorAll('.filter-btn').forEach(btn => {
                     btn.classList.remove('active');
                 });
                 this.classList.add('active');
                 
-                // Filter work items
                 const filter = this.getAttribute('data-filter');
+                
+                const filterDisplay = document.getElementById('current-filter-display');
+                if (filterDisplay) {
+                    filterDisplay.textContent = this.textContent.trim();
+                }
+                
                 const workItems = document.querySelectorAll('.work-item');
                 
                 workItems.forEach(item => {
@@ -1376,12 +1519,10 @@
             });
         });
 
-        // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 const href = this.getAttribute('href');
                 
-                // Only prevent default for on-page anchor links
                 if (href.startsWith('#') && href.length > 1) {
                     e.preventDefault();
                     
@@ -1396,7 +1537,6 @@
             });
         });
 
-        // Add animation to elements on scroll
         const observerOptions = {
             threshold: 0.1,
             rootMargin: '0px 0px -50px 0px'
@@ -1411,9 +1551,36 @@
             });
         }, observerOptions);
 
-        // Observe elements for animation
+        // Function to animate counting stats
+        function animateStats() {
+            const statNumbers = document.querySelectorAll('.stat-number');
+            const statsObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const el = entry.target;
+                        const target = parseInt(el.getAttribute('data-target'), 10);
+                        const suffix = el.getAttribute('data-suffix') || '';
+                        let current = 0;
+                        const increment = target / 50; // count up in ~50 steps
+                        const updateCounter = () => {
+                            current += increment;
+                            if (current < target) {
+                                el.textContent = Math.floor(current) + suffix;
+                                requestAnimationFrame(updateCounter);
+                            } else {
+                                el.textContent = target + suffix;
+                            }
+                        };
+                        updateCounter();
+                        observer.unobserve(el); // count only once
+                    }
+                });
+            }, { threshold: 0.5 });
+            statNumbers.forEach(num => statsObserver.observe(num));
+        }
+
         document.addEventListener('DOMContentLoaded', function() {
-            // Animate service cards
+            // Animate service cards etc.
             const serviceCards = document.querySelectorAll('.service-card');
             serviceCards.forEach((card, index) => {
                 card.style.opacity = '0';
@@ -1424,7 +1591,6 @@
                 }, index * 100);
             });
 
-            // Animate work items
             const workItems = document.querySelectorAll('.work-item');
             workItems.forEach((item, index) => {
                 item.style.opacity = '0';
@@ -1435,19 +1601,54 @@
                 }, index * 100);
             });
 
-            // Animate stat items
-            const statItems = document.querySelectorAll('.stat-item');
-            statItems.forEach((item, index) => {
-                item.style.opacity = '0';
-                item.style.transform = 'translateY(20px)';
-                item.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-                setTimeout(() => {
-                    observer.observe(item);
-                }, index * 100);
+            // Trigger stats animation when they come into view
+            animateStats();
+
+            const activeFilter = document.querySelector('.filter-btn.active');
+            if (activeFilter) {
+                const filterDisplay = document.getElementById('current-filter-display');
+                if (filterDisplay) {
+                    filterDisplay.textContent = activeFilter.textContent.trim();
+                }
+            }
+
+            // ===== ONE‑TIME TYPING EFFECT =====
+            const typedSpan = document.getElementById('typed-role');
+            if (typedSpan) {
+                const targetText = "Software Engineer";  // the word we want to type
+                let charIndex = 0;
+                typedSpan.textContent = ''; // start empty
+
+                function typeOnce() {
+                    if (charIndex < targetText.length) {
+                        typedSpan.textContent += targetText.charAt(charIndex);
+                        charIndex++;
+                        setTimeout(typeOnce, 300); // typing speed
+                    } else {
+                        // optionally remove cursor after a delay? keep it blinking
+                    }
+                }
+                typeOnce();
+            }
+        });
+
+        // Back to Top button functionality
+        const backToTop = document.getElementById('back-to-top');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+        });
+
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
             });
         });
 
-        // Initialize with header scroll check
         window.dispatchEvent(new Event('scroll'));
     </script>
 </body>
